@@ -1,0 +1,25 @@
+
+.hamburger {
+  width: 50px; /* Icon width */
+  height: 50px; /* Icon height */
+  display: inline-block; /* Display icon as inline block */
+  background-position: 0 -200px;
+  background-position: 5px -5px;
+  background: url("spritesheet.png") no-repeat;
+}
+
+ul.menu li.search a {
+  background-position: 5px -66px;
+}
+
+ul.menu li.question a {
+  background-position: 5px -125px;
+}
+
+ul.menu li.pig a {
+  background-position: 5px -185px;
+}
+
+ul.menu li.owl a {
+  background-position: 5px -245px;
+}
