@@ -1,0 +1,4 @@
+sprite shets gebruiken
+optimaliseren van fotos 
+alt invullen
+gzip->bestanden
