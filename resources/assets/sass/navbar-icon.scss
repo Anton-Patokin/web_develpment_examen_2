@@ -1,25 +1,113 @@
 
-.hamburger {
-  width: 50px; /* Icon width */
+ul.menu li.hamburger span {
+  width: 60px; /* Icon width */
   height: 50px; /* Icon height */
   display: inline-block; /* Display icon as inline block */
-  background-position: 0 -200px;
-  background-position: 5px -5px;
-  background: url("spritesheet.png") no-repeat;
+  background: url("spritesheet.png") 0px 0px no-repeat;
+  &:hover {
+    background-position: 1px -622px;
+  }
 }
+ul.menu li.hamburger.active span  {
+  background-position: 1px -622px;
+}
+
 
 ul.menu li.search a {
-  background-position: 5px -66px;
+   background-position: 0px -52px;
+   &:hover {
+     background-position: 1px -674px;
+   }
+   &:active {
+     background-position: 1px -674px;
+   }
+
+ }
+ul.menu li.search.active a {
+    background-position: 1px -674px;
 }
 
-ul.menu li.question a {
-  background-position: 5px -125px;
+
+
+ul.menu li.faq a {
+  background-position: 0px -104px;
+  &:hover {
+    background-position: 1px -726px;
+  }
+}
+ul.menu li.faq.active a {
+  background-position: 1px -726px;
 }
 
-ul.menu li.pig a {
-  background-position: 5px -185px;
+ul.menu li.devider a {
+  background-position: 0px -156px;
 }
 
-ul.menu li.owl a {
-  background-position: 5px -245px;
+ul.menu li.dogs a {
+  background-position: 0px -212px;
+  &:hover {
+    background-position: 1px -834px;
+  }
+}
+ul.menu li.dogs.active a {
+  background-position: 1px -834px;
+}
+
+
+
+ul.menu li.cats a {
+  background-position: 0px -264px;
+  &:hover {
+    background-position: 1px -886px;
+  }
+}
+ul.menu li.cats.active a {
+  background-position: 1px -886px;
+}
+
+
+
+ul.menu li.fish a {
+  background-position: 0px -318px;
+  &:hover {
+    background-position: 1px -940px;
+  }
+}
+ul.menu li.fish.active a {
+  background-position: 1px -940px;
+}
+
+
+
+ul.menu li.birds a {
+  background-position: 0px -370px;
+  &:hover {
+    background-position: 1px -992px;
+  }
+}
+ul.menu li.birds.active a {
+  background-position: 1px -992px;
+}
+
+
+
+
+ul.menu li.small_animals a {
+  background-position: 0px -422px;
+  &:hover {
+    background-position: 1px -1044px;
+  }
+}
+ul.menu li.small_animals.active a {
+  background-position: 1px -1044px;
+}
+
+
+
+
+ul.menu li.email a {
+  background-position: 0px -526px;
+}
+ul.menu li.extre a {
+  background-position: 0px -578px;
 }

@@ -1,0 +1,43 @@
+
+.logo{
+  position: absolute;
+  bottom: 0px;
+  width: 210px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.logo li {
+  line-height: 20px;
+}
+.logo span {
+  //-webkit-transition: all 0.5s ease;
+  //-moz-transition: all 0.5s ease;
+  //-o-transition: all 0.5s ease;
+  //transition: all 0.5s ease;
+  width: 210px; /* Icon width */
+  height: 52px; /* Icon height */
+
+  display: inline-block; /* Display icon as inline block */
+  background: url("logo.png") 0px 0px no-repeat;
+  &:hover {
+    background-position: 0px -52px;
+  }
+}
+.logo_k.active span  {
+  background-position: 0px -52px;
+}
+//
+//.logo li a:active,
+//.logo li a:focus {
+//  text-decoration: none;
+//}
+//
+//ul.logo li.logo_k a{
+//  background-position: 0px -474px;
+//}
+//ul.logo li.logo_k.active a {
+//  background-position: 1px -674px;
+//}
+//
+//

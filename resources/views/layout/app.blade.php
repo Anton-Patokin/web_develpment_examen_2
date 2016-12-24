@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <div id="wrapper">
+    <div id="wrapper" class="toggled">
         <!-- Sidebar -->
         @include('layout.navbar')
         {{--<div id="page-content-wrapper">--}}

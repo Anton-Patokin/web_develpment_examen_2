@@ -1,10 +1,16 @@
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav menu">
-        <li><span class="hamburger ie"></span></li>
-        <li class="search"><a href="#">Chrome</a></li>
-        <li class="question"><a href="#">Explorer</a></li>
-        <hr class="nav-separator">
-        <li class="pig"><a href="#">Opera</a></li>
-        <li class="owl"><a href="#">Safari</a></li>
+        <li class="menu-toggle hamburger ie "><span></span></li>
+        <li class="search"><a href="#">Search</a></li>
+        <li class="faq"><a href="#">FAQ</a></li>
+        <hr class="nav-devider">
+        <li class="dogs"><a href="#">Dogs</a></li>
+        <li class="cats"><a href="#">Cats</a></li>
+        <li class="fish"><a href="#">fish</a></li>
+        <li class="birds"><a href="#">Birds</a></li>
+        <li class="small_animals"><a href="#">Small animals</a></li>
+    </ul>
+    <ul class="logo">
+        <li class="logo_k"><span href="#"></span></li>
     </ul>
 </div>
