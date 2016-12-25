@@ -28,14 +28,19 @@
                     <div class="item">
                         <img src="{{url('/images/home_03.png')}}" alt="Flower" width="460" height="345">
                     </div>
+                    <div class="progressbar_down"></div>
+                    <div class="progressbar"></div>
                 </div>
 
             </div>
 
         </div>
+
         <div class="row">
             <div class="col-md-10 col-md-offset-2">
+
                 --------------------------- hier comt lorem ipsu text -------------------------------
+
             </div>
         </div>
         <div class="row">
