@@ -32,20 +32,33 @@
                     <div class="progressbar"></div>
                 </div>
                 {{--<div class="progress">--}}
-                    {{--<div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">--}}
-                        {{--<span class="sr-only">60% Complete</span>--}}
-                    {{--</div>--}}
+                {{--<div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">--}}
+                {{--<span class="sr-only">60% Complete</span>--}}
+                {{--</div>--}}
                 {{--</div>--}}
 
             </div>
 
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <p class="home-introduction">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna Duis aute<br> irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur.
+                        Excvepteur sint occaecat cupidatat non<br> proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum.
+                    </p>
+
+                </div>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-10 col-md-offset-2">
-
-                --------------------------- hier comt lorem ipsu text -------------------------------
-
+                ------------------------------ hier kommen categorieen----------------------------------
             </div>
         </div>
         <div class="row">
@@ -53,6 +66,96 @@
                 ------------------------------ hier kommen categorieen----------------------------------
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div><div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div><div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div><div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div><div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div><div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div><div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div><div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div><div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div><div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div><div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div><div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div><div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                ------------------------------ hier kommen categorieen----------------------------------
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 @endsection
 

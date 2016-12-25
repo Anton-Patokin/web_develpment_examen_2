@@ -8,25 +8,8 @@
 @import "navbar-icon";
 @import "logo";
 @import "carousel";
+@import "home";
 
 
-.progressbar_down{
-  position: absolute;
-  top: 477px;
-  left: 0;
-  z-index: 10;
-  width: 0%;
-  height: 3px;
-  width: 100%;
-  background-color: rgba(255, 255, 255, .4);
-}
-.progressbar {
-  position: absolute;
-  top: 477px;
-  left: 0;
-  z-index: 10;
-  width: 100%;
-  height: 3px;
-  background-color:rgba(255, 255, 255, .6);
-}
+
 
