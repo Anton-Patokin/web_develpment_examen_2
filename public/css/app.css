@@ -7956,4 +7956,47 @@ ul.menu li.extre a {
   background-position: 0px -52px;
 }
 
+.carousel-position {
+  margin-top: -25px;
+}
+
+.overlay {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  width: 312px;
+  height: 500px;
+  margin-left: -156px;
+  z-index: 10;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  text-indent: 0;
+  cursor: pointer;
+  border: 2px solid rgba(149, 149, 149, 0.4);
+  border-radius: 50%;
+  background-color: #323232;
+}
+
+.carousel-indicators .active {
+  border: 2px solid rgba(149, 149, 149, 0.4);
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  background-color: #fff;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 100%;
+  height: 480px;
+  margin: auto;
+}
+
 /*# sourceMappingURL=app.css.map */
