@@ -11,7 +11,7 @@ require('./bootstrap');
 
         });
 
-        $(".carousel-position").mouseout(function () {
+        $(".carousel-position").mouseleave(function () {
             progressBarRun();
         });
 
@@ -27,7 +27,7 @@ require('./bootstrap');
             progressBar = setInterval(function () {
                 counter += 1;
                 if (counter > 100) clearInterval(progressBar);
-                $(".progressbar").css("width", counter + "vw");
+                $(".progressbar").css("width", counter + "%");
             }, 45);
         }
 
