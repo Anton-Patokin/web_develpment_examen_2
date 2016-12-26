@@ -1,4 +1,4 @@
-<div id="sidebar-wrapper">
+<div id="sidebar-wrapper" class="choplin-font">
     <ul class="sidebar-nav menu">
         <li class="menu-toggle hamburger ie "><span></span></li>
         <li class="search"><a href="#">Search</a></li>

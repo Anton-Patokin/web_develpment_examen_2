@@ -18,14 +18,32 @@
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-top: 5px;
 }
 .home-categories-text.small {
-  font-size: 16px;
+  font-size: 18px;
 
 }
 
-
-div.home-categories-position:not(:last-child) {
-  background:url('../images/categories/devider.png') bottom 25px right no-repeat;
+ul.home-categories{
+margin-left: 50px;
 }
+
+ul.home-categories li{
+  list-style: none;
+  display: inline;
+  width: 165px;
+  margin: auto;
+
+}
+ul.home-categories li:not(:last-child) {
+  background:url('../images/categories/devider.png') top 15px right no-repeat;
+}
+
+
+.hot-items{
+  margin-left: 50px;
+  margin-top: 15px;
+}
+
 
