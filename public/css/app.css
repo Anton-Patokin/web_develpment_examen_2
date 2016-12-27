@@ -8047,23 +8047,37 @@ ul.menu li.extre a {
 }
 
 ul.home-categories {
-  margin-left: 50px;
+  margin-left: -15px;
 }
 
 ul.home-categories li {
   list-style: none;
   display: inline;
-  width: 165px;
+  width: 150px;
   margin: auto;
+}
+
+@media (min-width: 1200px) {
+  ul.home-categories {
+    margin-left: 50px;
+  }
+  ul.home-categories li {
+    list-style: none;
+    display: inline;
+    width: 165px;
+    margin: auto;
+  }
 }
 
 ul.home-categories li:not(:last-child) {
   background: url("../images/categories/devider.png") top 15px right no-repeat;
 }
 
-.hot-items {
-  margin-left: 50px;
-  margin-top: 15px;
+@media (min-width: 1200px) {
+  .hot-items {
+    margin-left: 50px;
+    margin-top: 15px;
+  }
 }
 
 .uppercase {

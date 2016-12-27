@@ -18,6 +18,8 @@ class CreateItemsTable extends Migration
             $table->decimal('price',5,2);
             $table->string('url');
             $table->integer('position');
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });
