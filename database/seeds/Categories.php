@@ -16,13 +16,24 @@ class Categories extends Seeder
         $type_fr = ['Chiens', 'Chats', 'Poisson', 'Des oiseaux', 'Petits animaux'];
         $url = ['dogs', 'cats', 'fish', 'birds', 'small_animals'];
         DB::table('categories')->delete();
+        DB::table('category_translations')->delete();
 
 
         foreach ($type_nl as $key => $type) {
             DB::table('categories')->insert([
-                'type_nl' => $type_nl[$key],
-                'type_fr' => $type_fr[$key],
                 'url' => $url[$key],
+            ]);
+
+            DB::table('category_translations')->insert([
+                "category_id"=>DB::table('categories')->where('url', $url[$key])->first()->id,
+                'locale'=>'fr',
+                'text'=>$type_fr[$key],
+            ]);
+
+            DB::table('category_translations')->insert([
+                "category_id"=>DB::table('categories')->where('url', $url[$key])->first()->id,
+                'locale'=>'nl',
+                'text'=>$type_nl[$key],
             ]);
         }
 

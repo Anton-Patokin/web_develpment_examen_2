@@ -12,15 +12,34 @@ class Items extends Seeder
     public function run()
     {
         DB::table('items')->delete();
+        DB::table('item_translations')->delete();
 
-        for ($i=0;$i<10;$i++){
+        for ($i = 0; $i < 10; $i++) {
+
+            $title = str_random(25);
+            $description = str_random(200);
+            $url = str_random(10) . '.jpg';
+
             DB::table('items')->insert([
-                'title_nl' => str_random(10).'nl',
-                'title_fr' => str_random(10).'fr',
                 'price' => 12.15,
-                'url'=>str_random(10).'jpg',
-                'position'=>rand(1,15),
+                'url' => $url,
+                'position' => rand(1, 15),
             ]);
+            DB::table('item_translations')->insert([
+                "item_id" => DB::table('items')->where('url', $url)->first()->id,
+                'locale' => 'fr',
+                'title' => $title . "_fr",
+                'description' => $description,
+            ]);
+
+            DB::table('item_translations')->insert([
+                "item_id" => DB::table('items')->where('url', $url)->first()->id,
+                'locale' => 'nl',
+                'title' => $title . "_nl",
+                'description' => $description,
+            ]);
+
+
         }
     }
 }

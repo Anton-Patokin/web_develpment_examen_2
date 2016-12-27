@@ -11,4 +11,27 @@
 |
 */
 
-Route::get('/', 'homeController@index');
+// app/Http/routes.php
+
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect']
+    ],
+    function () {
+        /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+        Route::get('/', 'homeController@index');
+
+
+        Route::get('test', function () {
+            return trans('messages.welcome');
+        });
+
+        Route::get('test', function () {
+            return trans('messages.welcome');
+        });
+        
+        
+        Route::get('/fr-nl/','LanguageController@index');
+    });
+
