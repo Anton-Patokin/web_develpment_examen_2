@@ -22,7 +22,7 @@ class productsController extends Controller
     {
         return view('admin-items.items')->with('categories', $this->custom_selector->get_categories());
     }
-    //
+    ////
 
     /**
      * Show the form for creating a new resource.
