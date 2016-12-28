@@ -1,7 +1,7 @@
 @if( Auth::check())
     <ul class="nav nav-pills  user-navbar">
         <li class=""><a href="{{url('/logout')}}">Logout</a></li>
-        <li class=""><a href="{{url('/users/products')}}">Products</a></li>
+        <li class=""><a href="{{url('/products')}}">Products</a></li>
         <li class=""><a href="{{url('/')}}">Website</a></li>
     </ul>
 @endif

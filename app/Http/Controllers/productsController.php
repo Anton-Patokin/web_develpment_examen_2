@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\MyLib\AccesDB;
 
 class productsController extends Controller
 {
+    private $custom_selector;
+    public function __construct(AccesDB $accesDB)
+    {
+        $this->custom_selector = $accesDB;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,7 @@ class productsController extends Controller
      */
     public function index()
     {
-        return view('admin-items.items');
+        return view('admin-items.items')->with('categories', $this->custom_selector->get_categories());
     }
 
     /**
