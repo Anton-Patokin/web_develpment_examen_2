@@ -18,28 +18,18 @@
 {{--@yield('content')--}}
 
 
-@if( !Request::is('login') && Auth::check() !='1')
+@if( !Request::is('login'))
     <div id="wrapper" class="toggled">
         <!-- Sidebar -->
         @include('layout.navbar')
         <div id="page-content-wrapper">
         </div>
     </div>
+    @yield('admin')
     @yield('content')
 @endif
-@if( Request::is('login') || Auth::check() !='1')
-
-    @if( Auth::check())
-        <ul class="nav nav-pills  user-navbar">
-
-            <li class=""><a href="{{url('/logout')}}">Logout</a></li>
-            <li class=""><a href="{{url('/users/products')}}">Products</a></li>
-        </ul>
-        <br>
-
-        @else
-        @yield('admin')
-        @endif
+@if( Request::is('login'))
+        @yield('login')
         @endif
 
                 <!-- /#wrapper -->

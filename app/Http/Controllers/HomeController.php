@@ -6,16 +6,16 @@ use Illuminate\Http\Request;
 use App\Category;
 use LaravelLocalization;
 use App\Item;
-use Auth;
+use App\Classes\MyCategories;
 
 class HomeController extends Controller
 {
     private $language;
-
+    private $categories;
 
     public function __construct()
     {
-//        LaravelLocalization::setLocale('fr' );
+        $this->categories = DbCategories::class;
         $this->language = LaravelLocalization::getCurrentLocale();
     }
 
