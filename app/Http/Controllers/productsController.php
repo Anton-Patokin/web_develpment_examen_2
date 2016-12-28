@@ -10,6 +10,7 @@ class productsController extends Controller
     private $custom_selector;
     public function __construct(AccesDB $accesDB)
     {
+        $this->middleware('auth');
         $this->custom_selector = $accesDB;
     }
 
@@ -22,7 +23,6 @@ class productsController extends Controller
     {
         return view('admin-items.items')->with('categories', $this->custom_selector->get_categories());
     }
-    ////
 
     /**
      * Show the form for creating a new resource.
