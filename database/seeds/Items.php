@@ -24,7 +24,7 @@ class Items extends Seeder
                 'price' => 12.15,
                 'url' => $url,
                 'position' => rand(1, 15),
-                'category_id' => DB::table('categories')->where('url', $url_categories[rand(0, count($url_categories))])->first()->id,
+                'category_id' => DB::table('categories')->where('url', $url_categories[rand(0, count($url_categories)-1)])->first()->id,
             ]);
             DB::table('item_translations')->insert([
                 "item_id" => DB::table('items')->where('url', $url)->first()->id,

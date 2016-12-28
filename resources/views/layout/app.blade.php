@@ -8,27 +8,50 @@
 </head>
 <body>
 
+{{--<div id="wrapper" class="toggled">--}}
+{{--<!-- Sidebar -->--}}
+{{--@include('layout.navbar')--}}
+{{--<div id="page-content-wrapper">--}}
+{{--</div>--}}
+{{--</div>--}}
+
+{{--@yield('content')--}}
+
+
+@if( !Request::is('login') && Auth::check() !='1')
     <div id="wrapper" class="toggled">
         <!-- Sidebar -->
         @include('layout.navbar')
-        {{--<div id="page-content-wrapper">--}}
-        {{--</div>--}}
+        <div id="page-content-wrapper">
+        </div>
     </div>
-
     @yield('content')
+@endif
+@if( Request::is('login') || Auth::check() !='1')
 
+    @if( Auth::check())
+        <ul class="nav nav-pills  user-navbar">
 
+            <li class=""><a href="{{url('/logout')}}">Logout</a></li>
+            <li class=""><a href="{{url('/users/products')}}">Products</a></li>
+        </ul>
+        <br>
 
-    <!-- /#wrapper -->
+        @else
+        @yield('admin')
+        @endif
+        @endif
 
-    {{--<div id="wrapper toggled">--}}
-    {{--@include('layout.navbar')--}}
+                <!-- /#wrapper -->
 
-    {{--<div id="page-content-wrapper">--}}
+        {{--<div id="wrapper toggled">--}}
+        {{--@include('layout.navbar')--}}
 
-    {{--</div>--}}
-    {{--</div>--}}
+        {{--<div id="page-content-wrapper">--}}
 
-<script src="{{url('/js/app.js')}}"></script>
+        {{--</div>--}}
+        {{--</div>--}}
+
+        <script src="{{url('/js/app.js')}}"></script>
 </body>
 </html>

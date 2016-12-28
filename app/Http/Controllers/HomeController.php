@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use LaravelLocalization;
 use App\Item;
+use Auth;
 
 class HomeController extends Controller
 {

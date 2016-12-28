@@ -35,3 +35,6 @@ Route::group(
         Route::get('/fr-nl/','LanguageController@index');
     });
 
+Route::get('/login', 'userController@index');
+Route::post('/users', 'userController@login');
+Route::get('/logout','userController@logout');

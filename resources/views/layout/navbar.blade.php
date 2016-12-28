@@ -6,8 +6,11 @@
         @foreach($categories as $category)
             <li class="{{$category['category']->url}}"><a href="#">{{$category['translation']->text}}</a></li>
         @endforeach
+
     </ul>
+
     <ul class="logo">
         <li class="logo_k"><span href="#"></span></li>
     </ul>
+
 </div>

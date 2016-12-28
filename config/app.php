@@ -163,7 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class, //custom
-
+        Collective\Html\HtmlServiceProvider::class, //custom
         /*
          * Package Service Providers...
          */
@@ -227,6 +227,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'LaravelLocalization'   => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,//costum
+        'Form' => Collective\Html\FormFacade::class,//custom
+        'Html' => Collective\Html\HtmlFacade::class,//custom
 
     ],
 
