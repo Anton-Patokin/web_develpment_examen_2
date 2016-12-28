@@ -38,3 +38,4 @@ Route::group(
 Route::get('/login', 'userController@index');
 Route::post('/users', 'userController@login');
 Route::get('/logout','userController@logout');
+Route::resource('/products','productsController');
