@@ -2,7 +2,6 @@
     <div class="container">
         <div class="col-md-offset-1">
             <nav class="navbar navbar-default navbar-fixed-top">
-
                 <ul class="nav navbar-nav">
                     <li class=""><a href="{{url('/logout')}}">Logout</a></li>
                     <li class=""><a href="{{url('/products')}}">Products</a></li>
@@ -21,6 +20,7 @@
         <li class="menu-toggle hamburger ie "><span></span></li>
         <li class="search"><a href="#">Search</a></li>
         <li class="faq"><a href="#">FAQ</a></li>
+        <hr class="nav-devider">
         @foreach($categories as $category)
             <li class="{{$category['category']->url}}"><a href="#">{{$category['translation']->text}}</a></li>
         @endforeach

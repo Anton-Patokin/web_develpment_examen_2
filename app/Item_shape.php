@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class item_shape extends Model
+class Item_shape extends Model
 {
     //
 }

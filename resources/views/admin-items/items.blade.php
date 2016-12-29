@@ -8,19 +8,20 @@
                 @foreach ($items as $key=>$item)
                     <div class="col-sm-4 col-md-3">
                         <div class="thumbnail">
-                            <img src="{{url('/images/items/'.($items_extra[$item->id]['foto']?$items_extra[$item->id]['foto']->url:'default.png'))}}" alt="...">
+                            <img src="{{url('/images/items/'.($items_extra[$item->id]['foto']?$items_extra[$item->id]['foto']->url:'default.png'))}}"
+                                 alt="...">
                             <div class="caption">
                                 @if($items_extra[$item->id]['translation'])
                                     <h3>{{$items_extra[$item->id]['translation']->title}}</h3>
                                 @endif
                                 <p>{{$item->price}}</p>
                                 <p>
-                                    @if($items_extra[$item->id]['foto'])
-                                        <a href="#" class="btn btn-primary" role="button">Edit</a>
-                                    @else
-                                        <a href="#" class="btn btn-primary" role="button">Complete </a>
-                                    @endif
+                                        <a href="{{url('/products/'.$item->id)}}" class="btn btn-primary" role="button">{{($items_extra[$item->id]['foto'])?'Update':'Complete'}} </a>
+                                    {{Form::open(['url' => '/products/'.$item->id,'method' => 'DELETE'])}}
+                                    {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+                                    {{ Form::close() }}
                                 </p>
+
                             </div>
                         </div>
                     </div>

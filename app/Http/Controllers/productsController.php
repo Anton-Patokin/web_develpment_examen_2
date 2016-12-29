@@ -15,12 +15,14 @@ class productsController extends Controller
 {
     private $custom_selector;
     private $language;
+    private $categories;
 
     public function __construct(AccesDB $accesDB)
     {
         $this->middleware('auth');
         $this->language = LaravelLocalization::getCurrentLocale();
         $this->custom_selector = $accesDB;
+        $this->categories = $this->custom_selector->get_categories();
     }
 
     /**
@@ -36,15 +38,12 @@ class productsController extends Controller
 
         $items_extra = [];
         foreach ($items as $key => $item) {
-            ;
             $items_extra[$item->id]['translation'] = $item->translations()->where('locale', $this->language)->get()->first();
             $items_extra[$item->id]['foto'] = $item->fotos()->get()->first();
         };
-
-
-
         $collections = Collection::all();
-        return view('admin-items.items', ['items' => $items, 'collections' => $collections,'items_extra'=>$items_extra])->with('categories', $this->custom_selector->get_categories());
+        return view('admin-items.items', ['items' => $items, 'collections' => $collections, 'items_extra' => $items_extra])
+            ->with('categories', $this->categories);
     }
 
     /**
@@ -111,7 +110,12 @@ class productsController extends Controller
      */
     public function show($id)
     {
-        //
+
+         $item = Item::find($id)->with('translations', 'fotos', 'tags', 'dimensions', 'shapes')->get()->first();
+
+        return view('admin-items.show-item', ['item' =>$item])
+            ->with('categories', $this->categories);
+
     }
 
     /**
@@ -122,7 +126,7 @@ class productsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return 'edit';
     }
 
     /**
@@ -145,6 +149,11 @@ class productsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Item::find($id);
+        $item->delete();
+        return redirect('/products');
+    }
+    public function add_to_product(Request $request,$table,$id){
+        return $id . $table;
     }
 }
