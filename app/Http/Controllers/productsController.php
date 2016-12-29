@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Item_shape;
 use Illuminate\Http\Request;
 use App\MyLib\AccesDB;
 use App\Item;
@@ -159,6 +160,9 @@ class productsController extends Controller
 
     public function delete_from_product($table, $id, $item_id)
     {
+        if ($table == 'shape') {
+            Item_shape::find($id)->delete();
+        }
         if ($table == 'foto') {
             Item_foto::find($id)->delete();
         }
@@ -168,7 +172,15 @@ class productsController extends Controller
 
     public function add_to_product(Request $request, $table, $id)
     {
+        if ($table == 'shape') {
+            $this->validate($request,['shape'=>'required']);
+            $shape = new Item_shape;
+            $shape->shape=$request->shape;
 
+            Item::find($id)->shapes()->save($shape);
+
+            return redirect('products/'.$id);
+        }
 
         if ($table == 'foto') {
 
@@ -212,7 +224,7 @@ class productsController extends Controller
         $item->position = $request->position;
         $item->category_id = Category::where('url', $request->category)->first()->id;
         $item->save();
-        
+
 
         $translation_fr = Item_translation::find($request->id_fr);
         $translation_fr->locale = 'fr';

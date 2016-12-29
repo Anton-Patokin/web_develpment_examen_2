@@ -180,42 +180,63 @@
                         </div>
                     </div>
 
-
-                    {{--Shapes --}}
-                    <div class="col-md-6">
-                        {!! Form::open(['url' => '/add/shape/product/'.$item->id]) !!}
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    {{ Form::label('shape','Selecter Vorm',array('class'=>'label-control'))}}
-                                    <select id="category" name="category" class="form-control">
-                                        <option value="square">Square</option>
-                                        <option value="rectangle">Rectangle</option>
-                                        <option value="circle">Circle</option>
-                                        <option value="triangle">Triangle</option>
-                                    </select>
-                                    @if($errors->has('shape'))
-                                        <div class="alert alert-danger">
-                                            <strong>Warning!</strong> {{$errors->first('url')}}
-                                        </div>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="col-md-1">
-                                {{Form::submit('Add',array('class'=>'btn btn-default'))}}
-                            </div>
-                        </div>
-                        {!! Form::close() !!}
-                    </div>
                     <div class="row">
                         <div class="col-md-12">
-                            {{Form::submit('Update product')}}
+                            {{Form::submit('Add product')}}
                         </div>
                     </div>
                     {{ Form::close()}}
 
+
+
+
+                    {{--Shapes --}}
+
+
                 </div>
 
+
+            </div>
+
+
+            <div class='col-md-offset-1'>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>vormen</h1>
+                        <div class="row">
+                            @foreach($item->shapes as $shape)
+                                <div class="col-xs-6 col-md-1">
+                                    <img src="{{url('/images/shapes/'.$shape->shape.'.png')}}" alt="...">
+                                    <a href="{{url('/delete/shape/product/'.$shape->id.'/'.$item->id)}}"
+                                       class="btn btn-danger">x</a>
+                                </div>
+                            @endforeach
+                        </div>
+                        {!! Form::open(['url' => '/add/shape/product/'.$item->id]) !!}
+                        <div class="form-group">
+                            {{ Form::label('shape','Selecter Vorm',array('class'=>'label-control'))}}
+                            <select id="shape" name="shape" class="form-control">
+                                <option value="square">Square</option>
+                                {{--<option value="rectangle">Rectangle</option>--}}
+                                <option value="circle">Circle</option>
+                                <option value="triangle">Triangle</option>
+                            </select>
+                            @if($errors->has('shape'))
+                                <div class="alert alert-danger">
+                                    <strong>Warning!</strong> {{$errors->first('shape')}}
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="col-md-1">
+                            {{Form::submit('Add shape',array('class'=>'btn btn-default'))}}
+                        </div>
+
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+            </div>
+            <div class='col-md-offset-1'>
                 <div class="row">
                     <div class="col-md-12">
                         {{Form::open(['url' => '/products/'.$item->id,'method' => 'DELETE'])}}
@@ -225,8 +246,6 @@
                         {{ Form::close() }}
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
