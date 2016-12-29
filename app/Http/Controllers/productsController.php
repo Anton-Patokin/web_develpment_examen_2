@@ -114,9 +114,9 @@ class productsController extends Controller
     public function show($id)
     {
 
-        $item = Item::find($id)->with('translations', 'fotos', 'tags', 'dimensions', 'shapes')->get()->first();
-
-        return view('admin-items.show-item', ['item' => $item])
+        $collections = Collection::all();
+        $item = Item::find($id)->with('translations', 'fotos', 'tags', 'dimensions', 'shapes')->where('id', $id)->get()->first();
+        return view('admin-items.show-item', ['item' => $item, 'collections' => $collections])
             ->with('categories', $this->categories);
 
     }
@@ -157,17 +157,17 @@ class productsController extends Controller
         return redirect('/products');
     }
 
-    public function delete_from_product($table, $id,$item_id){
-        if($table == 'foto'){
+    public function delete_from_product($table, $id, $item_id)
+    {
+        if ($table == 'foto') {
             Item_foto::find($id)->delete();
         }
-        return redirect('/products/'.$item_id);
+        return redirect('/products/' . $item_id);
     }
 
 
     public function add_to_product(Request $request, $table, $id)
     {
-
 
 
         if ($table == 'foto') {
@@ -177,7 +177,7 @@ class productsController extends Controller
 //// Resizing 340x340
 //            Image::make( $file->getRealPath() )->fit(340, 340)->save('uploads/resized-image.jpg')->destroy();
 //return 'okey';
-            
+
             $this->validate($request, [
                 'url' => 'required|mimes:jpeg,png'
             ]);
@@ -191,22 +191,46 @@ class productsController extends Controller
         return redirect('products/' . $id);
     }
 
-    public function update_on_items(Request $request,$table,$id_item){
+    public function update_on_items(Request $request, $id_item)
+    {
+        $this->validate($request, [
+            'title_nl' => 'required|max:255',
+            'title_fr' => 'required|max:255',
+            'description_nl' => 'required|max:1000',
+            'description_fr' => 'required|max:1000',
+            'price' => array('required', 'regex:/^\d*(\.\d{2})?$/'),
+            'position' => 'required',
+            'specification_nl' => 'required|max:1000',
+            'specification_fr' => 'required|max:1000',
+            'collection' => 'required',
+            'category' => 'required'
+        ]);
 
-        if($table == 'title'){
-            $this->validate($request,[
-                'title_fr'=>'required|max:255',
-                'title_nl'=>'required|max:255',
-            ]);
+        $item =Item::find($id_item);
+        $item->price = $request->price;
+        $item->collection = $request->collection;
+        $item->position = $request->position;
+        $item->category_id = Category::where('url', $request->category)->first()->id;
+        $item->save();
+        
 
-            $tranlation = Item_translation::find($request->id_fr);
-            $tranlation->title = $request->title_fr;
-            $tranlation->save();
+        $translation_fr = Item_translation::find($request->id_fr);
+        $translation_fr->locale = 'fr';
+        $translation_fr->title = $request->title_fr;
+        $translation_fr->description = $request->description_fr;
+        $translation_fr->specification = $request->specification_fr;
+        $item->translations()->save($translation_fr);
+        $translation_nl = Item_translation::find($request->id_nl);
+        $translation_nl->locale = 'nl';
+        $translation_nl->title = $request->title_nl;
+        $translation_nl->description = $request->description_nl;
+        $translation_nl->specification = $request->specification_nl;
+        $item->translations()->save($translation_nl);
 
-            $tranlation = Item_translation::find($request->id_nl);
-            $tranlation->title = $request->title_nl;
-            $tranlation->save();
-        }
-        return redirect('products/'.$id_item);
+
+
+
+
+        return redirect('products/' . $id_item);
     }
 }
