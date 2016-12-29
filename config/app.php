@@ -164,6 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class, //custom
         Collective\Html\HtmlServiceProvider::class, //custom
+        Intervention\Image\ImageServiceProvider::class,//custom image maker
         /*
          * Package Service Providers...
          */
@@ -229,6 +230,7 @@ return [
         'LaravelLocalization'   => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,//costum
         'Form' => Collective\Html\FormFacade::class,//custom
         'Html' => Collective\Html\HtmlFacade::class,//custom
+        'Image' => Intervention\Image\Facades\Image::class //custom
 
     ],
 

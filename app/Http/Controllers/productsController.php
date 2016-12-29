@@ -10,6 +10,9 @@ use App\Category;
 use App\Item_translation;
 use LaravelLocalization;
 use App\Item_foto;
+use Intervention\Image\ImageManager;
+use Illuminate\Support\Facades\Input;
+use Image;
 
 class productsController extends Controller
 {
@@ -111,9 +114,9 @@ class productsController extends Controller
     public function show($id)
     {
 
-         $item = Item::find($id)->with('translations', 'fotos', 'tags', 'dimensions', 'shapes')->get()->first();
+        $item = Item::find($id)->with('translations', 'fotos', 'tags', 'dimensions', 'shapes')->get()->first();
 
-        return view('admin-items.show-item', ['item' =>$item])
+        return view('admin-items.show-item', ['item' => $item])
             ->with('categories', $this->categories);
 
     }
@@ -153,7 +156,57 @@ class productsController extends Controller
         $item->delete();
         return redirect('/products');
     }
-    public function add_to_product(Request $request,$table,$id){
-        return $id . $table;
+
+    public function delete_from_product($table, $id,$item_id){
+        if($table == 'foto'){
+            Item_foto::find($id)->delete();
+        }
+        return redirect('/products/'.$item_id);
+    }
+
+
+    public function add_to_product(Request $request, $table, $id)
+    {
+
+
+
+        if ($table == 'foto') {
+
+//            $file = Input::file('url');
+//
+//// Resizing 340x340
+//            Image::make( $file->getRealPath() )->fit(340, 340)->save('uploads/resized-image.jpg')->destroy();
+//return 'okey';
+            
+            $this->validate($request, [
+                'url' => 'required|mimes:jpeg,png'
+            ]);
+            $new_file_name = time() . '.' . $request->url->guessClientExtension();
+            $request->url->move(base_path() . '/public/images/items/', $new_file_name);
+
+            $foto = new Item_foto;
+            $foto->url = $new_file_name;
+            Item::find($id)->fotos()->save($foto);
+        }
+        return redirect('products/' . $id);
+    }
+
+    public function update_on_items(Request $request,$table,$id_item){
+
+        if($table == 'title'){
+            $this->validate($request,[
+                'title_fr'=>'required|max:255',
+                'title_nl'=>'required|max:255',
+            ]);
+
+            $tranlation = Item_translation::find($request->id_fr);
+            $tranlation->title = $request->title_fr;
+            $tranlation->save();
+
+            $tranlation = Item_translation::find($request->id_nl);
+            $tranlation->title = $request->title_nl;
+            $tranlation->save();
+        }
+        return redirect('products/'.$id_item);
     }
 }
