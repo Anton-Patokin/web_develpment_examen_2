@@ -14,7 +14,7 @@ class Items extends Seeder
         DB::table('items')->delete();
         DB::table('item_translations')->delete();
         $url_categories = ['dogs', 'cats', 'fish', 'birds', 'small_animals'];
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 100; $i++) {
 
             $title = str_random(25);
             $description = str_random(200);

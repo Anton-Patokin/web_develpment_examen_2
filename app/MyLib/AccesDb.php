@@ -3,6 +3,8 @@ namespace App\MyLib;
 use App\Category;
 use App\Item;
 use LaravelLocalization;
+use App\Item_foto;
+Use App\Item_translation;
 
 class AccesDB
 {

@@ -30,7 +30,7 @@ Route::group(
         Route::get('test', function () {
             return trans('messages.welcome');
         });
-        
+
         
         Route::get('/fr-nl/','LanguageController@index');
     });

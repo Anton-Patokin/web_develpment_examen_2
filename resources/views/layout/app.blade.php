@@ -25,10 +25,11 @@
         <div id="page-content-wrapper">
         </div>
     </div>
-    @yield('admin')
-    @yield('content')
-@endif
-@if( Request::is('login'))
+
+        @yield('admin')
+        @yield('content')
+        @endif
+        @if( Request::is('login'))
         @yield('login')
         @endif
 

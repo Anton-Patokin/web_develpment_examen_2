@@ -20,7 +20,8 @@ class CreateItemTranslationsTable extends Migration
 
             $table->string('locale')->index();
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
+            $table->text('specification');
 
             $table->unique(['item_id','locale']);
             $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
