@@ -21,6 +21,7 @@ class HomeController extends Controller
 
     public function index()
     {
+        //
 //        return $items_with_translation[0]['item']->url;
 //        foreach ($all_categorys as$category){
 ////            return $category['category']->url;
