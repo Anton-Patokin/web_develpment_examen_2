@@ -13,7 +13,10 @@ class Item extends Model
     {
         return $this->hasMany('App\Item_translation');
     }
-
+    public function colors()
+    {
+        return $this->hasMany('App\Item_color');
+    }
     public function fotos()
     {
         return $this->hasMany('App\Item_foto');

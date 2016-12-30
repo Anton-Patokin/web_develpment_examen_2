@@ -3,11 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Item_dimension extends Model
 {
-    public function size()
-    {
-        return $this->hasMany('App\Dimension_size');
-    }
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
+
 }

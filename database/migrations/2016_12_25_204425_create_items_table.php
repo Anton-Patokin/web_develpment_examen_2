@@ -15,9 +15,10 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
-            $table->decimal('price',5,2);
+            $table->decimal('price',11,2);
             $table->string('collection');
             $table->integer('position');
+            $table->boolean('active')->default(0);
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->softDeletes();

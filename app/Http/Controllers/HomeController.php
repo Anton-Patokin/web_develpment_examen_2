@@ -27,6 +27,8 @@ class HomeController extends Controller
 ////            return $category['category']->url;
 //           return $category['translation']->text;
 //        }
+      
+
         return view('home')
             ->with('categories', $this->custom_selector->get_categories())
             ->with('items', $this->custom_selector->get_items(4));

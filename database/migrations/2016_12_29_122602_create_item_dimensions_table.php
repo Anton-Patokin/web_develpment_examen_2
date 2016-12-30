@@ -16,6 +16,8 @@ class CreateItemDimensionsTable extends Migration
         Schema::create('item_dimensions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type');
+            $table->integer('height');
+            $table->integer('width');
             $table->integer('item_id')->unsigned();
             $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
             $table->softDeletes();

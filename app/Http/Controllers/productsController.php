@@ -11,9 +11,13 @@ use App\Category;
 use App\Item_translation;
 use LaravelLocalization;
 use App\Item_foto;
+use App\Item_color;
+use App\Item_dimension;
+use App\Item_tag;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\Input;
 use Image;
+
 
 class productsController extends Controller
 {
@@ -74,7 +78,8 @@ class productsController extends Controller
             'title_fr' => 'required|max:255',
             'description_nl' => 'required|max:1000',
             'description_fr' => 'required|max:1000',
-            'price' => array('required', 'regex:/^\d*(\.\d{2})?$/'),
+            'price' =>'required|numeric|between:0,999999.99',
+//            'price' => 'numeric|min:1|max:5|regex:/^\d*(\.\d{2})?$/\'',
             'position' => 'required',
             'specification_nl' => 'required|max:1000',
             'specification_fr' => 'required|max:1000',
@@ -116,7 +121,7 @@ class productsController extends Controller
     {
 
         $collections = Collection::all();
-        $item = Item::find($id)->with('translations', 'fotos', 'tags', 'dimensions', 'shapes')->where('id', $id)->get()->first();
+        $item = Item::find($id)->with('translations', 'colors', 'fotos', 'tags', 'dimensions', 'shapes')->where('id', $id)->get()->first();
         return view('admin-items.show-item', ['item' => $item, 'collections' => $collections])
             ->with('categories', $this->categories);
 
@@ -160,6 +165,16 @@ class productsController extends Controller
 
     public function delete_from_product($table, $id, $item_id)
     {
+        if($table == 'tag'){
+            Item_tag::find($id)->delete();
+        }
+        if($table == 'dimensions'){
+            Item_dimension::find($id)->delete();
+        }
+        if ($table == 'color') {
+            Item_color::find($id)->delete();
+        }
+
         if ($table == 'shape') {
             Item_shape::find($id)->delete();
         }
@@ -172,14 +187,68 @@ class productsController extends Controller
 
     public function add_to_product(Request $request, $table, $id)
     {
+
+        if($table == 'active'){
+
+            $item=Item::find($id);
+            if($item->active){
+                $item->active = 0;
+            }else{
+                $item->active = 1;
+            }
+            $item->save();
+            
+        }
+
+        if($table == 'tag'){
+            $this->validate($request, [
+                'tag' => 'required|max:255',
+            ]);
+
+            $tag = new Item_tag;
+            $tag->tag = $request->tag;
+
+            Item::find($id)->tags()->save($tag);
+
+            return redirect('products/' . $id);
+        }
+
+
+        if($table == 'dimensions'){
+            $this->validate($request, [
+                'dimensions' => 'required|max:255',
+                'height'=>'required|numeric|min:1|max:10000',
+                'width'=>'required|numeric|min:1|max:10000',
+            ]);
+
+            $dimension = new Item_dimension;
+            $dimension->type = $request->dimensions;
+            $dimension->height =$request->height;
+            $dimension->width=$request->width;
+
+            Item::find($id)->dimensions()->save($dimension);
+
+            return redirect('products/' . $id);
+        }
+
+        if ($table == 'color') {
+            $this->validate($request, ['color' => 'required']);
+            $color = new Item_color;
+            $color->type = $request->color;
+
+            Item::find($id)->colors()->save($color);
+
+            return redirect('products/' . $id);
+        }
+
         if ($table == 'shape') {
-            $this->validate($request,['shape'=>'required']);
+            $this->validate($request, ['shape' => 'required']);
             $shape = new Item_shape;
-            $shape->shape=$request->shape;
+            $shape->shape = $request->shape;
 
             Item::find($id)->shapes()->save($shape);
 
-            return redirect('products/'.$id);
+            return redirect('products/' . $id);
         }
 
         if ($table == 'foto') {
@@ -205,12 +274,15 @@ class productsController extends Controller
 
     public function update_on_items(Request $request, $id_item)
     {
+
+        $request->price = (string)$request->price;
         $this->validate($request, [
             'title_nl' => 'required|max:255',
             'title_fr' => 'required|max:255',
             'description_nl' => 'required|max:1000',
             'description_fr' => 'required|max:1000',
-            'price' => array('required', 'regex:/^\d*(\.\d{2})?$/'),
+            'price' =>'required|numeric|between:0,999999.99',
+//            'price' => 'numeric|min:1|max:5|regex:/^\d*(\.\d{2})?$/\'',
             'position' => 'required',
             'specification_nl' => 'required|max:1000',
             'specification_fr' => 'required|max:1000',
@@ -218,7 +290,7 @@ class productsController extends Controller
             'category' => 'required'
         ]);
 
-        $item =Item::find($id_item);
+        $item = Item::find($id_item);
         $item->price = $request->price;
         $item->collection = $request->collection;
         $item->position = $request->position;
@@ -238,9 +310,6 @@ class productsController extends Controller
         $translation_nl->description = $request->description_nl;
         $translation_nl->specification = $request->specification_nl;
         $item->translations()->save($translation_nl);
-
-
-
 
 
         return redirect('products/' . $id_item);

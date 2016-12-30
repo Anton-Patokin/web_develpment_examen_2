@@ -7,17 +7,22 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-11">
-            @foreach($items as $key=>$item)
-                <div class="col-md-3">
-                    <p>{{$item['item']->url}}</p>
+        <div class="col-md-12">
 
-                    <hr>
-                    <p>{{$item['translation']->title}}</p>
-                    <p>{{$item['item']->price}}</p>
-                </div>
+            <div class="row">
+                @foreach($items as $key=>$item)
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="{{url('/images/items/'.$item['url'])}}" alt="{{$item['title']}}">
+                            <div class="caption">
+                                <p>{{$item['title']}}</p>
+                                <p>{{$item['price']}}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
 
-            @endforeach
+            </div>
         </div>
     </div>
 </div>
