@@ -18,11 +18,11 @@
 <div id="sidebar-wrapper" class="choplin-font">
     <ul class="sidebar-nav menu">
         <li class="menu-toggle hamburger ie "><span></span></li>
-        <li class="search"><a href="#">Search</a></li>
-        <li class="faq"><a href="#">FAQ</a></li>
+        <li class="search"><a class="font-gray" href="#">Search</a></li>
+        <li class="faq"><a class="font-gray" href="#">FAQ</a></li>
         <hr class="nav-devider">
         @foreach($categories as $category)
-            <li class="{{$category['category']->url}}"><a href="#">{{$category['translation']->text}}</a></li>
+            <li class=" {{$category['category']->url}}"><a class="font-white" href="#">{{$category['translation']->text}}</a></li>
         @endforeach
     </ul>
     <ul class="logo">

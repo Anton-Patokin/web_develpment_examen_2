@@ -7750,7 +7750,6 @@ button.close {
   background: url("spritesheet.png") no-repeat;
   /* As all link share the same background-image */
   text-decoration: none;
-  color: #b2b2b2;
 }
 
 .sidebar-nav li a:active,
@@ -8254,8 +8253,86 @@ ul.home-categories li:not(:last-child) {
   display: block;
 }
 
+.section-banner {
+  height: 200px;
+  background: url("../images/backgrounds/patroon_a.jpg") 0 0 repeat-x;
+  text-align: center;
+}
+
+.section-banner h1 {
+  margin-top: 50px;
+}
+
+.section-banner h3 {
+  margin-top: 30px;
+}
+
+.section-subscribe {
+  background-color: #5f5f5f;
+  height: 200px;
+  padding-top: 30px;
+}
+
+.subscribe {
+  margin-top: 75px;
+  height: 200px;
+  margin-bottom: 75px;
+}
+
+.font-gray {
+  color: #b2b2b2;
+}
+
+.font-white {
+  color: #fff;
+}
+
 .uppercase {
   text-transform: uppercase;
+}
+
+a:hover {
+  color: #fff;
+}
+
+input.form-control {
+  margin-top: 1px;
+  font-size: 16px !important;
+  height: 46px !important;
+  color: #b2b2b2 !important;
+}
+
+input.form-control::-webkit-input-placeholder {
+  color: #b2b2b2;
+}
+
+input.form-control::-moz-placeholder {
+  color: #b2b2b2;
+}
+
+input.form-control:-ms-input-placeholder {
+  color: #b2b2b2;
+}
+
+.btn {
+  border-radius: 0px;
+  border: 1px solid #323232;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 35px;
+}
+
+.btn:hover {
+  background-color: #424242;
+}
+
+.btn-default {
+  background-color: #323232;
+  color: #b2b2b2;
+}
+
+.btn-default:hover {
+  background-color: #424242;
 }
 
 /*# sourceMappingURL=app.css.map */

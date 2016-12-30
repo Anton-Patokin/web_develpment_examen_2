@@ -1,14 +1,14 @@
 <div class="container hot-items">
     <div class="row">
         <div class="col-md-11">
-            <h1 class="choplin-font uppercase">
+            <h1 class="choplin-font uppercase font-white">
                 {{trans('messages.hot-items')}}.
             </h1>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
-            <div class="row">
+
+
                 @foreach($items as $key=>$item)
                     <div class="items">
                         <div class="col-sm-6 col-md-3">
@@ -23,7 +23,7 @@
                                             <li class="color-circel color-{{$color->type}}"></li>
                                         @endforeach
                                     @else
-                                        <li class=" color-four"><span>4</span></li>
+                                        <li class=" color-four"><span>{{count($item['color'])}}</span></li>
                                     @endif
                                 </ul>
 
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
-        </div>
+
+
     </div>
 </div>

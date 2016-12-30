@@ -8,6 +8,13 @@
 </head>
 <body>
 
+@if(!Cookie::has('acceptCookie'))
+    <h1>set cookie</h1>
+    <button class="btn btn-cookie"><a href="{{url('/set_cookie')}}">{{trans('messages.set_cookie')}}</a></button>
+@else
+    <h1>cookies zijn geacepteerd</h1>
+@endif
+
 {{--<div id="wrapper" class="toggled">--}}
 {{--<!-- Sidebar -->--}}
 {{--@include('layout.navbar')--}}
@@ -26,23 +33,23 @@
         </div>
     </div>
 
-        @yield('admin')
-        @yield('content')
-        @endif
-        @if( Request::is('login'))
-        @yield('login')
-        @endif
+    @yield('admin')
+    @yield('content')
+    @endif
+    @if( Request::is('login'))
+    @yield('login')
+    @endif
 
-                <!-- /#wrapper -->
+            <!-- /#wrapper -->
 
-        {{--<div id="wrapper toggled">--}}
-        {{--@include('layout.navbar')--}}
+    {{--<div id="wrapper toggled">--}}
+    {{--@include('layout.navbar')--}}
 
-        {{--<div id="page-content-wrapper">--}}
+    {{--<div id="page-content-wrapper">--}}
 
-        {{--</div>--}}
-        {{--</div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
 
-        <script src="{{url('/js/app.js')}}"></script>
+    <script src="{{url('/js/app.js')}}"></script>
 </body>
 </html>

@@ -31,7 +31,6 @@ Route::group(
             return trans('messages.welcome');
         });
 
-        
         Route::get('/fr-nl/','LanguageController@index');
     });
 
@@ -42,3 +41,5 @@ Route::resource('/products','productsController');
 Route::post('/add/{table}/product/{id}','productsController@add_to_product');
 Route::get('/delete/{tabele}/product/{id}/{item_id}','productsController@delete_from_product');
 Route::post('/update/product/{id_item}','productsController@update_on_items');
+Route::post('/subscribe','subscribeController@add_subscriber');
+Route::get('/set_cookie','subscribeController@set_cookie');

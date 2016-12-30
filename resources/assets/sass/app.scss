@@ -11,16 +11,54 @@
 @import "home";
 @import "items/item";
 @import "items/color-items";
-.choplin-font {
-
-}
-
+@import "subscribe/complite";
+@import "font";
 
 
 .uppercase {
   text-transform: uppercase;
 }
 
+a:hover{
+  color: #fff;
+}
 
+
+
+input.form-control {
+  margin-top: 1px;
+  font-size: 16px !important;
+  height:46px !important;
+  color: $text-color_white !important;
+}
+
+input.form-control::-webkit-input-placeholder {
+  color: $text-color_white;
+}
+input.form-control::-moz-placeholder {
+  color: $text-color_white;
+}
+input.form-control:-ms-input-placeholder {
+  color: $text-color_white;
+}
+.btn{
+  border-radius: 0px;
+  border: 1px solid #323232;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 35px;
+
+}
+.btn:hover{
+  background-color: #424242;
+}
+
+.btn-default{
+  background-color: #323232;
+  color: $text-color_white;
+}
+.btn-default:hover{
+  background-color: #424242;
+}
 
 

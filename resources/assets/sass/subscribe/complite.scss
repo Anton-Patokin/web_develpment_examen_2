@@ -1,0 +1,11 @@
+$subscribe_height: 200px;
+@import "baner";
+@import "subscribe";
+
+
+
+.subscribe {
+  margin-top:75px;
+  height: $subscribe_height;
+  margin-bottom: 75px;
+}
