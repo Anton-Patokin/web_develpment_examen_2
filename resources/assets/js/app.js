@@ -1,6 +1,17 @@
 require('./bootstrap');
 (function ($) {
     $(document).ready(function () {
+
+        $('.thumbnail-custom').mouseenter(function () {
+
+            $(this).find('a:first').addClass('img-hover');
+            $(this).find('p:first').addClass('img-hover-text-hover');
+        });
+        $('.thumbnail-custom').mouseleave(function () {
+            $(this).find('a:first').removeClass('img-hover');
+            $(this).find('p:first').removeClass('img-hover-text-hover');
+        });
+
         $(".menu-toggle").click(function (e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
