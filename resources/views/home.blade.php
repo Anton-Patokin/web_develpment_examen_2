@@ -44,11 +44,7 @@
             @include('home.introduction')
             @include('home.categories')
             @include('home.hot-items')
-            <div class="row">
-                <div class="col-md-10 col-md-offset-2">
-                    ------------------------------ banner----------------------------------
-                </div>
-            </div>
+            @include('home.subscribe')
         </div>
 
 

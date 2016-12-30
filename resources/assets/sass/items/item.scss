@@ -29,14 +29,16 @@
 
 .thumbnail-small {
   position: relative;
-  margin-top: 15px;
+  margin-top: 16px;
   width: 230px;
+  height: 90%;
   border: 1px solid #717171;
   padding: 5px 5px 5px 5px;
   background-color: #565656;
 
   img {
     width: 100%;
+    height: 136px;
   }
   p {
     margin-top: 10px;
@@ -78,13 +80,12 @@
   display: block;
   background: rgba(255, 111, 158, .86) url("../images/hover/more.png");
   width: 220px;
-  height: 152px;
+  height: 136px;
   position: absolute;
   z-index: 2;
 }
 
-
-.img-hover-text{
+.img-hover-text {
   position: absolute;
   top: 110px;
   text-align: center;
@@ -95,14 +96,41 @@
   opacity: 0;
 }
 
-.img-hover-text-hover{
+.img-hover-text-hover {
   z-index: 2;
   opacity: 1;
 }
-.thumbnail-small .img-hover-text{
+
+.thumbnail-small .img-hover-text {
   position: absolute;
-  top: 120px;
+  top: 95px;
   text-align: center;
   width: 220px;
   color: #fff;
+}
+
+
+
+.colors {
+  position: absolute;
+  top: 15px;
+  left: -10px;
+}
+
+.colors li {
+  margin: 2px;
+  display: block;
+  float: left;
+}
+
+.thumbnail-small .colors {
+  position: absolute;
+  top: 10px;
+  left: -25px;
+}
+
+.thumbnail-small .colors li {
+  margin: 2px;
+  display: block;
+  float: left;
 }
