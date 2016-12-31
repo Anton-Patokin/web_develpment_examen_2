@@ -8,12 +8,18 @@
 </head>
 <body>
 
-@if(!Cookie::has('acceptCookie'))
-    <h1>set cookie</h1>
-    <button class="btn btn-cookie"><a href="{{url('/set_cookie')}}">{{trans('messages.set_cookie')}}</a></button>
+@if(Cookie::get('2') != 'okey')
+    <div class="cookie">
+        <div class="container">
+            <h1>set cookie</h1>
+            <button class="btn btn-cookie font-white"><a href="{{url('/set_cookie')}}">{{trans('messages.set_cookie')}}</a>
+            </button>
+        </div>
+    </div>
 @else
-    <h1>cookies zijn geacepteerd</h1>
+
 @endif
+
 
 {{--<div id="wrapper" class="toggled">--}}
 {{--<!-- Sidebar -->--}}

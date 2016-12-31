@@ -27,8 +27,7 @@ class subscribeController extends Controller
         if(Cookie::has('acceptCookie')){
             return ' okey';
         }
-//        cookie('set_cookie', 'okey', 45000);
-        $cookie= Cookie::make('set_cookie', 'okey', 45000);
-        return redirect('/')->withCookie($cookie);
+        $cookie = Cookie::forever('acceptCookie', 'okey');
+        return redirect('/');
     }
 }

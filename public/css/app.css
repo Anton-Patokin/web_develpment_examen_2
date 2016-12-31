@@ -8287,6 +8287,22 @@ ul.home-categories li:not(:last-child) {
   color: #fff;
 }
 
+.cookie {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background-color: #f7eade;
+  z-index: 10000;
+}
+
+.btn-cookie {
+  background-color: #e27500;
+  border: 0px;
+  font-weight: bold;
+}
+
 .uppercase {
   text-transform: uppercase;
 }

@@ -1,7 +1,7 @@
 <div class="container hot-items">
     <div class="row">
         <div class="col-md-11">
-            <h1 class="choplin-font uppercase font-white">
+            <h1 class="choplin-font uppercase">
                 {{trans('messages.hot-items')}}.
             </h1>
         </div>
