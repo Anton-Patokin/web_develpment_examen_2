@@ -2,6 +2,11 @@ require('./bootstrap');
 (function ($) {
     $(document).ready(function () {
 
+        $('.exit-cookie').click(function () {
+
+            $('.cookie').hide();
+        })
+
         $('.thumbnail-custom').mouseenter(function () {
 
             $(this).find('a:first').addClass('img-hover');
@@ -49,5 +54,11 @@ require('./bootstrap');
             clearInterval(progressBar);
             progressBarRun();
         });
+
+
+        if($('.subscribe-error').length > 0){
+            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+        }
+
     })
 })(jQuery)

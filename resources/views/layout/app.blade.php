@@ -8,12 +8,26 @@
 </head>
 <body>
 
-@if(Cookie::get('2') != 'okey')
+@if(Cookie::get('acceptCookie') != 'okey')
     <div class="cookie">
-        <div class="container">
-            <h1>set cookie</h1>
-            <button class="btn btn-cookie font-white"><a href="{{url('/set_cookie')}}">{{trans('messages.set_cookie')}}</a>
-            </button>
+        <div class="container-fluid">
+            <a><img class="exit-cookie pull-right" src="{{url('/images/cookie/exit.png')}}"></a>
+        </div>
+        <div class="container ">
+            <div class="col-md-offset-1">
+                <div class="col-md-2">
+                    <img class="img-cookie" src="{{url('/images/cookie/cookies.png')}}">
+                </div>
+                <div class="col-md-9 col-md-offset-1 cookie-margin-top-text">
+                    <h1>Cookies</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna Duis voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    <button class="btn btn-cookie font-white"><a href="{{url('/set_cookie')}}">{{trans('messages.set_cookie')}}</a>
+                    </button>
+                </div>
+                
+            </div>
+            
         </div>
     </div>
 @else

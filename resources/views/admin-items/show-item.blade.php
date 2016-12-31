@@ -11,7 +11,7 @@
                 <div class="row">
                     @foreach($item->fotos as $foto)
                         <div class="col-xs-6 col-md-3">
-                            <img src="{{url('/images/items/'.$foto->url)}}" alt="...">
+                            <img src="{{url('/images/items/small/'.$foto->url)}}" alt="...">
                             <a href="{{url('/delete/foto/product/'.$foto->id.'/'.$item->id)}}"
                                class="btn btn-danger">delete</a>
                         </div>

@@ -19,7 +19,7 @@
                               </span>
                     </div><!-- /input-group -->
                     @if($errors->has('email'))
-                        <div class="alert alert-danger">
+                        <div class="alert alert-danger subscribe-error">
                             <strong>Warning!</strong> {{$errors->first('email')}}
                         </div>
                     @endif

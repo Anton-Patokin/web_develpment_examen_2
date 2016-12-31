@@ -13,17 +13,16 @@
                     <div class="items">
                         <div class="col-sm-6 col-md-3">
                             <div class="thumbnail-custom {{($key==3)?'thumbnail-small':''}}">
-                                <a class="" href=""><img src="{{url('/images/items/'.$item['url'])}}"
+                                <a class="" href=""><img src="{{url('/images/items/small/'.$item['url'])}}"
                                                          alt="{{$item['title']}}"></a>
                                 <p class="img-hover-text">{{($key!=3)?trans('messages.detail'):trans('messages.more')}}</p>
                                 <ul class="colors">
-                                    @if(count($item['color'])< 3))
-
+                                    @if(count($item['color'])< 3)
                                         @foreach($item['color'] as $color)
                                             <li class="color-circel color-{{$color->type}}"></li>
                                         @endforeach
                                     @else
-                                        <li class=" color-four"><span>{{count($item['color'])}}</span></li>
+                                        <li class="color-four"><span>{{count($item['color'])}}</span></li>
                                     @endif
                                 </ul>
 

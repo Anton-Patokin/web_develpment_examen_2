@@ -2,11 +2,10 @@
 
 
 @section('content')
+    @include('logo-top')
     <div class="container-fluid">
         <div class="row carousel-position">
-            <div class="overlay">
-                <img src="{{url('/images/logo.png')}}" class="image-responsive"/>
-            </div>
+
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">

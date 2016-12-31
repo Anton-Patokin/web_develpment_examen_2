@@ -20,7 +20,7 @@ Route::group(
     ],
     function () {
         /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-        Route::get('/', 'homeController@index');
+        Route::get('/', 'HomeController@index');
 
 
         Route::get('test', function () {
@@ -32,6 +32,9 @@ Route::group(
         });
 
         Route::get('/fr-nl/','LanguageController@index');
+
+        Route::get('/{category}','HomeController@show_category_product');
+        Route::get('/{category}/product/{id}','HomeController@show_product');
     });
 
 Route::get('/login', 'userController@index');

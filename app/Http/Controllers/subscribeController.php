@@ -17,17 +17,14 @@ class subscribeController extends Controller
         $subscriber = new Subscribe;
         $subscriber->email = $request->email;
         $subscriber->save();
-
-        return 'okey';
+        
         return redirect('/');
     }
 
     public function set_cookie()
     {
-        if(Cookie::has('acceptCookie')){
-            return ' okey';
-        }
+
         $cookie = Cookie::forever('acceptCookie', 'okey');
-        return redirect('/');
+        return redirect('/')->withCookie($cookie);
     }
 }

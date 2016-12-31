@@ -253,17 +253,13 @@ class productsController extends Controller
 
         if ($table == 'foto') {
 
-//            $file = Input::file('url');
-//
-//// Resizing 340x340
-//            Image::make( $file->getRealPath() )->fit(340, 340)->save('uploads/resized-image.jpg')->destroy();
-//return 'okey';
-
             $this->validate($request, [
                 'url' => 'required|mimes:jpeg,png'
             ]);
             $new_file_name = time() . '.' . $request->url->guessClientExtension();
-            $request->url->move(base_path() . '/public/images/items/', $new_file_name);
+            $request->url->move(base_path() . '/public/images/items/original/', $new_file_name);
+            Image::make(public_path('/images/items/original/'.$new_file_name))->resize(230, 160)->save(public_path('/images/items/small/'.$new_file_name));
+            Image::make(public_path('/images/items/original/'.$new_file_name))->resize(460, 260)->save(public_path('/images/items/big/'.$new_file_name));
 
             $foto = new Item_foto;
             $foto->url = $new_file_name;

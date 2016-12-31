@@ -19,46 +19,71 @@
   text-transform: uppercase;
 }
 
-a:hover{
+a:hover {
   color: #fff;
 }
-
-
 
 input.form-control {
   margin-top: 1px;
   font-size: 16px !important;
-  height:46px !important;
+  height: 46px !important;
   color: $text-color_white !important;
 }
 
 input.form-control::-webkit-input-placeholder {
   color: $text-color_white;
 }
+
 input.form-control::-moz-placeholder {
   color: $text-color_white;
 }
+
 input.form-control:-ms-input-placeholder {
   color: $text-color_white;
 }
-.btn{
+
+.btn {
   border-radius: 0px;
-  border: 1px solid #323232;
   text-transform: uppercase;
   font-size: 16px;
   line-height: 35px;
 
 }
-.btn:hover{
+
+.btn:hover {
   background-color: #424242;
 }
 
-.btn-default{
+.btn-default {
+  border: 1px solid #323232;
   background-color: #323232;
   color: $text-color_white;
 }
-.btn-default:hover{
+
+.btn-default:hover {
   background-color: #424242;
 }
 
+//
+//@font-face {
+//  font-family: chaplinMedium;
+//  src: url('/font/Choplin-Medium-DEMO.eot');
+//  src: url('/font/Choplin-Medium-DEMO.woff') format('woff'),
+//  url('/font/Choplin-Medium-DEMO.ttf') format('truetype');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+@font-face {
+  font-family: 'Choplin-Medium-DEMO';
+  src: url('Choplin-Medium-DEMO.ttf.woff') format('woff'),
+  url('Choplin-Medium-DEMO.ttf.svg#Choplin-Medium-DEMO') format('svg'),
+  url('Choplin-Medium-DEMO.ttf.eot'),
+  url('Choplin-Medium-DEMO.ttf.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.choplin-font {
+  font-family: 'Choplin-Medium-DEMO', "Arial";
+}
 

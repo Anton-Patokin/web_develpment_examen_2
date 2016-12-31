@@ -21,16 +21,21 @@ class HomeController extends Controller
 
     public function index()
     {
-        //
-//        return $items_with_translation[0]['item']->url;
-//        foreach ($all_categorys as$category){
-////            return $category['category']->url;
-//           return $category['translation']->text;
-//        }
-      
-
         return view('home')
             ->with('categories', $this->custom_selector->get_categories())
             ->with('items', $this->custom_selector->get_items(4));
+    }
+
+    public function show_category_product($category){
+        return view('item-detail/item-detail')
+            ->with('categories', $this->custom_selector->get_categories())
+            ->with('items', $this->custom_selector->get_items(4));
+    }
+    public function show_product($category, $id){
+//        return 'okey';
+        return view('item-detail/item-detail')
+            ->with('categories', $this->custom_selector->get_categories())
+            ->with('items', $this->custom_selector->get_items(4));
+
     }
 }

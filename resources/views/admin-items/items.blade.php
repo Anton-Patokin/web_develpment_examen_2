@@ -8,7 +8,7 @@
                 @foreach ($items as $key=>$item)
                     <div class="col-sm-4 col-md-3">
                         <div class="thumbnail">
-                            <img src="{{url('/images/items/'.($items_extra[$item->id]['foto']?$items_extra[$item->id]['foto']->url:'default.png'))}}"
+                            <img src="{{url('/images/items/small/'.($items_extra[$item->id]['foto']?$items_extra[$item->id]['foto']->url:'default.png'))}}"
                                  alt="...">
                             <div class="caption">
                                 @if($items_extra[$item->id]['translation'])

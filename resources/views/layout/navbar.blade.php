@@ -22,7 +22,13 @@
         <li class="faq"><a class="font-gray" href="#">FAQ</a></li>
         <hr class="nav-devider">
         @foreach($categories as $category)
-            <li class=" {{$category['category']->url}}"><a class="font-white" href="#">{{$category['translation']->text}}</a></li>
+            <li class=" {{$category['category']->url}} @if(Request::is('*/'.$category['category']->url))
+            {{'active'}}
+            @else
+            @if(Request::is('*/'.$category['category']->url.'/*'))
+            {{'active'}}
+            @endif
+            @endif"><a class="font-white" href="#">{{$category['translation']->text}}</a></li>
         @endforeach
     </ul>
     <ul class="logo">

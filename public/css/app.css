@@ -8292,15 +8292,44 @@ ul.home-categories li:not(:last-child) {
   top: 0;
   left: 0;
   right: 0;
-  height: 300px;
+  height: 220px;
   background-color: #f7eade;
   z-index: 10000;
 }
 
+.cookie h1 {
+  color: #e27500;
+}
+
+.cookie-margin-top-text {
+  margin-top: -20px;
+}
+
+.img-cookie {
+  max-height: 100px;
+  margin-top: 0px;
+  margin-right: 20px;
+}
+
 .btn-cookie {
   background-color: #e27500;
-  border: 0px;
+  border: 1px solid #e27500;
   font-weight: bold;
+}
+
+.btn-cookie :hover {
+  border: 1px solid #323232;
+}
+
+.btn-cookie a {
+  font-weight: bold;
+  color: #fff;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.btn-cookie a :hover {
+  text-decoration: none;
 }
 
 .uppercase {
@@ -8332,7 +8361,6 @@ input.form-control:-ms-input-placeholder {
 
 .btn {
   border-radius: 0px;
-  border: 1px solid #323232;
   text-transform: uppercase;
   font-size: 16px;
   line-height: 35px;
@@ -8343,12 +8371,24 @@ input.form-control:-ms-input-placeholder {
 }
 
 .btn-default {
+  border: 1px solid #323232;
   background-color: #323232;
   color: #b2b2b2;
 }
 
 .btn-default:hover {
   background-color: #424242;
+}
+
+@font-face {
+  font-family: 'Choplin-Medium-DEMO';
+  src: url("Choplin-Medium-DEMO.ttf.woff") format("woff"), url("Choplin-Medium-DEMO.ttf.svg#Choplin-Medium-DEMO") format("svg"), url("Choplin-Medium-DEMO.ttf.eot"), url("Choplin-Medium-DEMO.ttf.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.choplin-font {
+  font-family: 'Choplin-Medium-DEMO', "Arial";
 }
 
 /*# sourceMappingURL=app.css.map */
