@@ -26,23 +26,24 @@ Route::group(
         Route::get('test', function () {
             return trans('messages.welcome');
         });
-
         Route::get('test', function () {
             return trans('messages.welcome');
         });
-
         Route::get('/fr-nl/','LanguageController@index');
-
-        Route::get('/{category}','HomeController@show_category_product');
-        Route::get('/{category}/product/{id}','HomeController@show_product');
+        Route::get('/product/{category}','HomeController@show_category_product');
+        Route::get('/product/{category}/{id}','HomeController@show_product');
     });
 
-Route::get('/login', 'userController@index');
-Route::post('/users', 'userController@login');
-Route::get('/logout','userController@logout');
+
 Route::resource('/products','productsController');
 Route::post('/add/{table}/product/{id}','productsController@add_to_product');
 Route::get('/delete/{tabele}/product/{id}/{item_id}','productsController@delete_from_product');
 Route::post('/update/product/{id_item}','productsController@update_on_items');
 Route::post('/subscribe','subscribeController@add_subscriber');
 Route::get('/set_cookie','subscribeController@set_cookie');
+Route::get('/login', 'userController@index');
+Route::post('/users', 'userController@login');
+Route::get('/logout','userController@logout');
+Route::get('test', function () {
+    return view('user.login');
+});

@@ -26,16 +26,23 @@ class HomeController extends Controller
             ->with('items', $this->custom_selector->get_items(4));
     }
 
-    public function show_category_product($category){
+    public function show_category_product($category)
+    {
         return view('item-detail/item-detail')
             ->with('categories', $this->custom_selector->get_categories())
             ->with('items', $this->custom_selector->get_items(4));
     }
-    public function show_product($category, $id){
-//        return 'okey';
+
+    public function show_product($category, $id)
+    {
+       $item = Item::find($id);
+        if($item && $item->active){
+            $item = Item::find($id)->with('translations', 'colors', 'fotos', 'tags', 'dimensions', 'shapes')->where('id', $id)->get()->first();
+        }else{
+            $item = 'false';
+        }
         return view('item-detail/item-detail')
             ->with('categories', $this->custom_selector->get_categories())
-            ->with('items', $this->custom_selector->get_items(4));
-
+            ->with('item', $item);
     }
 }

@@ -28,9 +28,11 @@ class AccesDB
         $four_first_items = Item::orderBy('position', 'ASC')->take($hunk)->get();
         $items_with_translation = [];
         foreach ($four_first_items as $key => $item) {
+            $items_with_translation[$key]['id'] =$item->id;
             $items_with_translation[$key]['title'] = $item->translations()->where('locale', $this->language)->get()->first()->title;
             $items_with_translation[$key]['price'] =$item->price ;
             $items_with_translation[$key]['url'] = $item->fotos()->get()->first()->url;
+            $items_with_translation[$key]['category'] =$item->category()->first()->url;
             $items_with_translation[$key]['color']=$item->colors()->get();
         };
         return $items_with_translation;

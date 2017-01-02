@@ -7,7 +7,6 @@
                     <li class=""><a href="{{url('/products')}}">Products</a></li>
                     <li class=""><a href="{{url('/')}}">Website</a></li>
                 </ul>
-
             </nav>
         </div>
     </div>
@@ -18,8 +17,8 @@
 <div id="sidebar-wrapper" class="choplin-font">
     <ul class="sidebar-nav menu">
         <li class="menu-toggle hamburger ie "><span></span></li>
-        <li class="search"><a class="font-gray" href="#">Search</a></li>
-        <li class="faq"><a class="font-gray" href="#">FAQ</a></li>
+        <li class="search"><a class="font-gray" href="">Search</a></li>
+        <li class="faq"><a class="font-gray" href="">FAQ</a></li>
         <hr class="nav-devider">
         @foreach($categories as $category)
             <li class=" {{$category['category']->url}} @if(Request::is('*/'.$category['category']->url))
@@ -28,7 +27,7 @@
             @if(Request::is('*/'.$category['category']->url.'/*'))
             {{'active'}}
             @endif
-            @endif"><a class="font-white" href="#">{{$category['translation']->text}}</a></li>
+            @endif"><a class="font-white" href="{{url('/product/'.$category['category']->url)}}">{{$category['translation']->text}}</a></li>
         @endforeach
     </ul>
     <ul class="logo">

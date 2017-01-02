@@ -237,7 +237,7 @@
                         {!! Form::close() !!}
                     </div>
                     <div class="col-md-6">
-                        <h1>Tags</h1>
+                        <h1>Color</h1>
                         <div class="row">
                             @foreach($item->colors as $color)
                                 <div class="col-xs-6 col-md-1">
@@ -336,7 +336,7 @@
                         {!! Form::close() !!}
                     </div>
                     <div class="col-md-6">
-                        <h1>Kleuren</h1>
+                        <h1>Tags</h1>
                         <div class="row">
                             @foreach($item->tags as $tag)
                                 <div class="col-xs-6 col-md-4">
