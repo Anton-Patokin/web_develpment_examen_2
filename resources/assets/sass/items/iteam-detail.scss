@@ -13,7 +13,7 @@ $margin-left: -4.5%;
 }
 
 .item-detail-detail-area {
-  background-color: #00ee00;
+  //background-color: #00ee00;
 }
 
 $multiplair: 1.235;
@@ -28,10 +28,9 @@ $multiplair: 1.235;
   z-index: 5000;
   width: 100%;
   height: 100%;
-
 }
 
-.img-small.active{
+.img-small.on-active {
   opacity: 0.6;
 }
 
@@ -46,6 +45,87 @@ $multiplair: 1.235;
   background-color: #fff;
 }
 
+.small-img-text {
+  margin-bottom: 2px;
+  font-size: 12px;
+  font-family: Arial;
+}
 
+.maximize {
+  position: absolute;
+  top: 5px;
+  right: -8px;
+}
 
+/////////////////////////////
 
+#breadcrumbs-three {
+  overflow: hidden;
+  width: 100%;
+}
+
+#breadcrumbs-three li {
+  list-style: none;
+  float: left;
+  margin: 0 0.7em 0 0;
+}
+
+.breadcrumbs-three-circel {
+  position: relative;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+}
+
+.breadcrumbs-three-circel .dogs {
+  background-color: #ff6f9e;
+}
+
+#breadcrumbs-three li:not(:first-child) {
+  margin-top: 0.2em;
+}
+
+#breadcrumbs-three a {
+  padding: 2px 5px 2px 5px;
+  text-align: center;
+  float: left;
+  text-decoration: none;
+  color: $text-color_white;
+  background: #323232;
+  position: relative;
+  z-index: 1;
+  border-radius: .4em 0 0 .4em;
+}
+
+//#breadcrumbs-three a:hover{
+//  background: #abe0ef;
+//}
+
+#breadcrumbs-three a::before {
+  background: #323232;
+  content: "";
+  height: 1.5em;
+  margin-top: -1.25em;
+  position: absolute;
+  left: -0.5em;
+  top: 80%;
+  width: 1.5em;
+
+  z-index: -1;
+  transform: rotate(45deg);
+  border-radius: .4em;
+}
+
+#breadcrumbs-three a:hover::after {
+  background: #abe0ef;
+}
+
+#breadcrumbs-three .current,
+#breadcrumbs-three .current:hover {
+  font-weight: bold;
+  background: none;
+}
+
+#breadcrumbs-three .current::before {
+  content: normal;
+}

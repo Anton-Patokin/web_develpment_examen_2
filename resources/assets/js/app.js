@@ -2,6 +2,22 @@ require('./bootstrap');
 (function ($) {
     $(document).ready(function () {
 
+        var getUrl = window.location;
+        var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1]+'/public/';
+        console.log(baseUrl);
+
+
+       $('.img-small').click(function () {
+           $('.img-small').addClass('on-active');
+           var url =$(this).attr('id');
+           $(this).removeClass('on-active');
+
+           $('#img-big').attr('src',baseUrl+'/images/items/big/'+url);
+       })
+
+
+
+
         $('.exit-cookie').click(function () {
 
             $('.cookie').hide();
