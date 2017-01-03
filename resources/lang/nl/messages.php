@@ -11,6 +11,8 @@ return [
     'newsletter' => 'Alleen in onze nieuwsbrief',
     'subscribe' => 'Abonneer je op onze nieuwsbrief',
     'lorum' => 'Lorum ipsum dolor sit amet..',
-    'set_cookie'=>'ok, verder surfen'
+    'set_cookie'=>'ok, verder surfen',
+    'colors'=>'Kleuren',
+    'description'=>'Beschrijving',
 
 ];

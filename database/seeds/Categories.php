@@ -12,7 +12,7 @@ class Categories extends Seeder
     public function run()
     {
 
-        $type_nl = ['Honden', 'Katen', 'Vissen', 'Vogels', 'Kleine dieren'];
+        $type_nl = ['Honden', 'Katten', 'Vissen', 'Vogels', 'Kleine dieren'];
         $type_fr = ['Chiens', 'Chats', 'Poisson', 'Des oiseaux', 'Petits animaux'];
         $url = ['dogs', 'cats', 'fish', 'birds', 'small_animals'];
         DB::table('categories')->delete();

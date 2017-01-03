@@ -11,5 +11,7 @@ return [
     'newsletter'=>'Seulement dans notre newsletter',
     'subscribe'=>'Abonnez-vous à notre newsletter',
     'lorum'=>'Lorum ipsum dolor sit amet..',
-    'set_cookie'=>'ok, continuer le surf'
+    'set_cookie'=>'ok, continuer le surf',
+    'colors'=>'Les couleurs',
+    'description'=>'La description',
 ];

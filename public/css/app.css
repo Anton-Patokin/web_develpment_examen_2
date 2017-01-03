@@ -8287,6 +8287,14 @@ ul.home-categories li:not(:last-child) {
   color: #fff;
 }
 
+.font-head {
+  font-size: 40px;
+}
+
+.font-weight {
+  font-weight: bold;
+}
+
 .cookie {
   position: absolute;
   top: 0;
@@ -8385,24 +8393,53 @@ ul.home-categories li:not(:last-child) {
 
 #breadcrumbs-three {
   overflow: hidden;
-  width: 100%;
 }
 
 #breadcrumbs-three li {
   list-style: none;
   float: left;
-  margin: 0 0.7em 0 0;
+  margin: 0 0.8em 0 0;
 }
 
-.breadcrumbs-three-circel {
-  position: relative;
-  height: 5px;
-  width: 5px;
-  border-radius: 50%;
+.item-detail-detail-area-tags {
+  margin-left: -40px;
 }
 
-.breadcrumbs-three-circel .dogs {
-  background-color: #ff6f9e;
+.item-detail-detail-area h1 {
+  margin-top: 15px;
+}
+
+.item-detail-detail-area h3 {
+  margin-top: 0px;
+  font-size: 26px;
+}
+
+.item-detail-detail-area h4 {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.item-detail-detail-area .colors-inline {
+  overflow: auto;
+  width: 100%;
+}
+
+.item-detail-detail-area .page {
+  margin-right: 5px;
+  float: left;
+}
+
+.item-detail-detail-area .shape-inline {
+  margin-top: 30px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.item-detail-detail-area .shape {
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+  float: left;
 }
 
 #breadcrumbs-three li:not(:first-child) {
@@ -8425,10 +8462,10 @@ ul.home-categories li:not(:last-child) {
   background: #323232;
   content: "";
   height: 1.5em;
-  margin-top: -1.25em;
+  margin-top: -1.27em;
   position: absolute;
   left: -0.5em;
-  top: 80%;
+  top: 81%;
   width: 1.5em;
   z-index: -1;
   -webkit-transform: rotate(45deg);
@@ -8448,6 +8485,77 @@ ul.home-categories li:not(:last-child) {
 
 #breadcrumbs-three .current::before {
   content: normal;
+}
+
+.breadcrumbs-three-circel {
+  z-index: 3;
+  position: absolute;
+  top: 10px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+
+.breadcrumbs-three-circel.dogs {
+  background-color: #ff6f9e;
+}
+
+.breadcrumbs-three-circel.cats {
+  background-color: #494969;
+}
+
+.breadcrumbs-three-circel.fish {
+  background-color: #ffb93f;
+}
+
+.breadcrumbs-three-circel.birds {
+  background-color: #7bff81;
+}
+
+.breadcrumbs-three-circel.small_animals {
+  background-color: #548591;
+}
+
+#breadcrumbs-three a.extra-padding-breadcrumbs-three {
+  padding-left: 15px;
+}
+
+.item-Specifications {
+  margin-top: 15px;
+  border: 2px solid #717171;
+}
+
+.item-Specifications h4 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.item-Specifications h5 {
+  font-size: 14px;
+}
+
+.item-Specifications p {
+  margin-top: -5px;
+  font-size: 14px;
+}
+
+.item-Specifications p span {
+  text-transform: capitalize;
+}
+
+.carousel-margin-top {
+  margin-top: 50px;
+}
+
+.carousel-margin-top h1 {
+  font-size: 20px;
+}
+
+.items-carousel li {
+  width: 100%;
+  overflow: hidden;
+  height: 240px;
+  margin-right: -75px;
 }
 
 .uppercase {
