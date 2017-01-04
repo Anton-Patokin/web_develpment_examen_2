@@ -7806,6 +7806,15 @@ button.close {
   border-top: 1px solid #ccc;
 }
 
+.nav-email-style {
+  margin-top: -10px;
+  margin-bottom: -30px;
+}
+
+#sidebar-wrapper .nav-email-style a {
+  line-height: 35px;
+}
+
 ul.menu li.hamburger span {
   width: 60px;
   /* Icon width */
@@ -8210,6 +8219,11 @@ ul.home-categories li:not(:last-child) {
   margin: 2px;
   display: block;
   float: left;
+}
+
+.madding-right {
+  margin-top: 10px;
+  padding-right: 20px;
 }
 
 .color-circel {

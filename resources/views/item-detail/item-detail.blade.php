@@ -113,6 +113,9 @@
                             <div class="col-md-12 items-carousel font-white">
                                 @include('item-detail.item-carousel')
                             </div>
+                            <div class="col-md-12">
+                                <a href="{{url('/view/more/'.$item->category->id)}}"> <p class="choplin-font font-white pull-right">view more</p></a>
+                            </div>
                         </div>
 
                         {{--{{ $item_pagination->links() }}--}}

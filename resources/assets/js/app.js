@@ -3,8 +3,8 @@ require('./bootstrap');
 (function ($) {
     $(document).ready(function () {
 
+        $('.nav-hide').hide();
 
-        
         $('.pagination-items-right').click(function () {
             console.log('click-rigth');
             $('#item-carousel').animate({'scrollLeft': '+=1000px'}, "slow");
@@ -57,7 +57,12 @@ require('./bootstrap');
             $(".hamburger").toggleClass("active");
             $(".nav-devider").toggleClass("active");
             $('.logo_k').toggleClass('active');
-
+            // $('.nav-hide').toggle();
+            if ( $('.nav-hide').is( ":hidden" ) ) {
+                $('.nav-hide').slideDown( "slow" );
+            } else {
+                $('.nav-hide').slideUp();
+            }
 
         });
 

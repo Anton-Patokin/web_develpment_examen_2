@@ -19,6 +19,8 @@
         <li class="menu-toggle hamburger ie "><span></span></li>
         <li class="search"><a class="font-gray" href="">Search</a></li>
         <li class="faq"><a class="font-gray" href="">FAQ</a></li>
+        <hr class="nav-devider nav-hide">
+        <li class="email nav-email-style nav-hide"><a class="font-gray " href="">Contact</a></li>
         <hr class="nav-devider">
         @foreach($categories as $category)
             <li class=" {{$category['category']->url}} @if(Request::is('*/'.$category['category']->url))

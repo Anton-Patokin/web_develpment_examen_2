@@ -9,31 +9,39 @@
     <div class="row">
 
 
-                @foreach($items as $key=>$item)
-                    <div class="items">
-                        <div class="col-sm-6 col-md-3">
-                            <div class="thumbnail-custom {{($key==3)?'thumbnail-small':''}}">
-                                <a class="" href="{{url('/product/'.$item['category'].'/'.$item['id'])}}"><img src="{{url('/images/items/small/'.$item['url'])}}"
-                                                         alt="{{$item['title']}}"></a>
-                                <p class="img-hover-text">{{($key!=3)?trans('messages.detail'):trans('messages.more')}}</p>
-                                <ul class="colors">
-                                    @if(count($item['color'])< 3)
-                                        @foreach($item['color'] as $color)
-                                            <li class="color-circel color-{{$color->type}}"></li>
-                                        @endforeach
-                                    @else
-                                        <li class="color-four"><span>{{count($item['color'])}}</span></li>
-                                    @endif
-                                </ul>
-
-                                <div class="caption">
-                                    <p class="choplin-font">{{$item['title']}} <span class="choplin-font pull-right">&#8364; {{$item['price']}}</span>
-                                    </p>
-                                </div>
-                            </div>
+        @foreach($items as $key=>$item)
+            <div class="items">
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail-custom {{($key==3)?'thumbnail-small':''}}">
+                        <a class="" href="{{url('/product/'.$item['category'].'/'.$item['id'])}}"><img
+                                    src="{{url('/images/items/small/'.$item['url'])}}"
+                                    alt="{{$item['title']}}"></a>
+                        <p class="img-hover-text">{{($key!=3)?trans('messages.detail'):trans('messages.more')}}</p>
+                        <ul class="colors">
+                            @if(count($item['color'])< 3)
+                                @foreach($item['color'] as $color)
+                                    <li class="color-circel color-{{$color->type}}"></li>
+                                @endforeach
+                            @else
+                                <li class="color-four"><span>{{count($item['color'])}}</span></li>
+                            @endif
+                        </ul>
+                        <div class="caption">
+                            <p class="choplin-font">{{$item['title']}} <span
+                                        class="choplin-font pull-right">&#8364; {{$item['price']}}</span>
+                            </p>
                         </div>
                     </div>
-                @endforeach
+                </div>
+            </div>
+        @endforeach
+        <div class="col-md-12">
+            <a href="{{url('/view/more/store')}}">
+                <p class="choplin-font font-white pull-right madding-right">
+                    Visit the store
+                </p>
+            </a>
+        </div>
 
 
     </div>
