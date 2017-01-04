@@ -32,7 +32,8 @@ Route::group(
         Route::get('/fr-nl/','LanguageController@index');
         Route::get('/product/{category}','HomeController@show_category_product');
         Route::get('/product/{category}/{id}','HomeController@show_product');
-        Route::get('about-us','HomeController@about_us');
+        Route::get('/about-us','HomeController@about_us');
+
     });
 
 
@@ -48,3 +49,4 @@ Route::get('/logout','userController@logout');
 Route::get('test', function () {
     return view('user.login');
 });
+Route::post('/about_us' , 'AboutUsController@send_mail');

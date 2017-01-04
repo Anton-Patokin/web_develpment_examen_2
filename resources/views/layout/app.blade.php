@@ -22,7 +22,8 @@
                     <h1>Cookies</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                         ut labore et dolore magna Duis voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                    <button class="btn btn-cookie font-white"><a href="{{url('/set_cookie')}}">{{trans('messages.set_cookie')}}</a>
+                    <button class="btn btn-cookie font-white">
+                        <a href="{{url('/set_cookie')}}">{{trans('messages.set_cookie')}}</a>
                     </button>
                 </div>
                 

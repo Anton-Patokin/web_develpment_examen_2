@@ -8701,7 +8701,7 @@ ul.home-categories li:not(:last-child) {
 }
 
 .margin-left-tags {
-  margin-left: -45px;
+  margin-left: -55px;
 }
 
 .about-us-contact {
@@ -8712,6 +8712,32 @@ ul.home-categories li:not(:last-child) {
 .about-us-content h3 {
   margin-top: 0px;
   padding-top: 0px;
+  font-size: 20px;
+}
+
+.about_us_bundel_1 {
+  margin-top: 25px;
+}
+
+.btn-pink {
+  background-color: #ff6f9e;
+  border: 1px solid #ff6f9e;
+  font-weight: bold;
+}
+
+.btn-pink :hover {
+  border: 1px solid #323232;
+}
+
+.btn-margin {
+  margin-top: 20px;
+}
+
+.contact-us-margin-top {
+  margin-top: 50px;
+}
+
+.contact-us-margin-top h3 {
   font-size: 20px;
 }
 
@@ -8728,6 +8754,18 @@ input.form-control {
   font-size: 16px !important;
   height: 46px !important;
   color: #b2b2b2 !important;
+  border-radius: 0px;
+}
+
+textarea.form-control {
+  margin-top: 1px;
+  font-size: 16px !important;
+  color: #b2b2b2 !important;
+  border-radius: 0px;
+}
+
+textarea.form-control::-webkit-input-placeholder {
+  color: #b2b2b2;
 }
 
 input.form-control::-webkit-input-placeholder {
@@ -8747,6 +8785,7 @@ input.form-control:-ms-input-placeholder {
   text-transform: uppercase;
   font-size: 16px;
   line-height: 35px;
+  border-radius: 0px;
 }
 
 .btn:hover {

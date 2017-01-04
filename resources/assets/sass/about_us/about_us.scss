@@ -11,19 +11,44 @@
   height: 480px;
 }
 
-.margin-left-tags{
-  margin-left: -45px;
+.margin-left-tags {
+  margin-left: -55px;
 }
-.about-us-contact{
+
+.about-us-contact {
   border-left: 1px solid #717171;
   border-bottom: 1px solid #717171;
 }
 
-.about-us-content{
+.about-us-content {
 
-  h3{
+  h3 {
     margin-top: 0px;
     padding-top: 0px;
     font-size: 20px;
   }
+}
+
+.about_us_bundel_1 {
+  margin-top: 25px;
+}
+
+.btn-pink {
+  background-color: #ff6f9e;
+  border: 1px solid #ff6f9e;
+  font-weight: bold;
+  :hover {
+    border: 1px solid #323232;
+  }
+}
+.btn-margin{
+  margin-top: 20px;
+}
+
+.contact-us-margin-top {
+  h3 {
+    font-size: 20px;
+  }
+
+  margin-top: 50px;
 }
