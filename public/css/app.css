@@ -8551,11 +8551,126 @@ ul.home-categories li:not(:last-child) {
   font-size: 20px;
 }
 
-.items-carousel li {
-  width: 100%;
+#item-carousel {
+  margin-left: -40px;
+  list-style-type: none;
+  white-space: nowrap;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+#item-carousel li {
+  margin-right: 15px;
+  display: inline;
+  height: 100%;
+}
+
+#item-carousel li a.img-background {
+  position: relative;
   overflow: hidden;
-  height: 240px;
-  margin-right: -75px;
+  display: inline-table;
+  background-color: #565656;
+  height: 100%;
+  width: 230px;
+}
+
+#item-carousel li img {
+  height: 160px;
+  width: 230px;
+  border: 2px solid #717171;
+  padding: 5px;
+}
+
+#pagination-items {
+  position: absolute;
+  top: 60px;
+}
+
+#pagination-items {
+  position: absolute;
+  top: 65px;
+  width: 100%;
+  color: #000;
+}
+
+#pagination-items .pagination-items-left {
+  position: absolute;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  line-height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+}
+
+#pagination-items .pagination-items-left span {
+  position: absolute;
+  width: 30px;
+  left: 0;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  font-size: 30px;
+}
+
+#pagination-items .pagination-items-left span img {
+  margin-top: -3px;
+  margin-left: -2px;
+}
+
+#pagination-items .pagination-items-right {
+  position: absolute;
+  right: 35px;
+  width: 40px;
+  height: 40px;
+  line-height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+}
+
+#pagination-items .pagination-items-right span {
+  position: absolute;
+  right: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+#pagination-items .pagination-items-right span img {
+  margin-top: -3px;
+  margin-left: +2px;
+}
+
+#item-carousel li a.pagination-items-img-hover:before {
+  content: '';
+  display: inline;
+  width: 220px;
+  height: 150px;
+  position: absolute;
+  overflow: hidden;
+  top: 5px;
+  margin-left: 5px;
+  background: rgba(255, 111, 158, 0.86) url("../images/hover/detail.png");
+  z-index: 2;
+}
+
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#item-carousel li:hover {
+  cursor: pointer;
+}
+
+.image2 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
 .uppercase {

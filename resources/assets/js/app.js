@@ -1,6 +1,17 @@
 require('./bootstrap');
+
 (function ($) {
     $(document).ready(function () {
+
+
+
+        
+        $('.img-background').mouseover(function () {
+            $(this).find('.image2').show();
+        })
+        $('.img-background').mouseleave(function () {
+            $(this).find('.image2').hide();
+        })
 
         var getUrl = window.location;
         var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1]+'/public/';

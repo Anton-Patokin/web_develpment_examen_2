@@ -109,11 +109,13 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12 items-carousel font-white">
-                            @include('item-detail.item-carousel')
-
+                        <div class="row">
+                            <div class="col-md-12 items-carousel font-white">
+                                @include('item-detail.item-carousel')
+                            </div>
                         </div>
-                        {{ $item_pagination->links() }}
+
+                        {{--{{ $item_pagination->links() }}--}}
                     </div>
                 </div>
 

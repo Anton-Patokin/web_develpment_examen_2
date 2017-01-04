@@ -36,7 +36,7 @@ class HomeController extends Controller
     public function show_product($category, $id)
     {
 
-        $item_pagination = Item::orderBy('created_at', 'ASC')->paginate(5);
+        $item_pagination = Item::orderBy('created_at', 'ASC')->paginate(20);
 
         $items_extra = [];
         foreach ($item_pagination as $key => $item) {
