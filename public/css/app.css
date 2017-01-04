@@ -8552,7 +8552,7 @@ ul.home-categories li:not(:last-child) {
 }
 
 #item-carousel {
-  margin-left: -40px;
+  padding: 0;
   list-style-type: none;
   white-space: nowrap;
   overflow-x: hidden;

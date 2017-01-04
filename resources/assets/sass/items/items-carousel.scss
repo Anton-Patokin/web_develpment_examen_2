@@ -5,7 +5,7 @@
   }
 }
 
-//#item-carousel {
+  //#item-carousel {
 //  position: absolute;
 //  overflow: auto;
 //  width: 100%;
@@ -17,7 +17,8 @@
 //  list-style: none;
 //}
 #item-carousel {
-  margin-left: -40px;
+  padding: 0;
+  //margin-left: -40px;
   list-style-type: none;
   white-space: nowrap;
   overflow-x: hidden;
