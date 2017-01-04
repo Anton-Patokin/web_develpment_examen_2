@@ -32,6 +32,7 @@ Route::group(
         Route::get('/fr-nl/','LanguageController@index');
         Route::get('/product/{category}','HomeController@show_category_product');
         Route::get('/product/{category}/{id}','HomeController@show_product');
+        Route::get('about-us','HomeController@about_us');
     });
 
 

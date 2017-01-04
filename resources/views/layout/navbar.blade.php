@@ -20,7 +20,8 @@
         <li class="search"><a class="font-gray" href="">Search</a></li>
         <li class="faq"><a class="font-gray" href="">FAQ</a></li>
         <hr class="nav-devider nav-hide">
-        <li class="email nav-email-style nav-hide"><a class="font-gray " href="">Contact</a></li>
+        <li class="email nav-email-style nav-hide {{(Request::is('*/about-us')?'active':'')}}"><a class="font-gray "
+                                                                                              href="{{url('/about-us')}}">Contact</a></li>
         <hr class="nav-devider">
         @foreach($categories as $category)
             <li class=" {{$category['category']->url}} @if(Request::is('*/'.$category['category']->url))
@@ -29,7 +30,9 @@
             @if(Request::is('*/'.$category['category']->url.'/*'))
             {{'active'}}
             @endif
-            @endif"><a class="font-white" href="{{url('/product/'.$category['category']->url)}}">{{$category['translation']->text}}</a></li>
+            @endif"><a class="font-white"
+                       href="{{url('/product/'.$category['category']->url)}}">{{$category['translation']->text}}</a>
+            </li>
         @endforeach
     </ul>
     <ul class="logo">

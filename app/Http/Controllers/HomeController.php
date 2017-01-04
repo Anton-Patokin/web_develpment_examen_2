@@ -56,6 +56,12 @@ class HomeController extends Controller
 
         return view('item-detail/item-detail')
             ->with('categories', $this->custom_selector->get_categories())
-            ->with('item', $item)->with('translation', $translation)->with('item_pagination',$item_pagination)->with('items_extra',$items_extra);
+            ->with('item', $item)->with('translation', $translation)->with('item_pagination', $item_pagination)->with('items_extra', $items_extra);
+    }
+
+    public function about_us()
+    {
+        return view('about-us/about-us')
+            ->with('categories', $this->custom_selector->get_categories());
     }
 }
