@@ -169,19 +169,24 @@ class productsController extends Controller
     {
         if($table == 'tag'){
             Item_tag::find($id)->delete();
+            session(['success' => 'Delete tag']);
         }
         if($table == 'dimensions'){
             Item_dimension::find($id)->delete();
+            session(['success' => 'Delete dimension']);
         }
         if ($table == 'color') {
             Item_color::find($id)->delete();
+            session(['success' => 'Delete color']);
         }
 
         if ($table == 'shape') {
             Item_shape::find($id)->delete();
+            session(['success' => 'Delete shape']);
         }
         if ($table == 'foto') {
             Item_foto::find($id)->delete();
+            session(['success' => 'Delete foto']);
         }
         return redirect('/products/' . $item_id);
     }
@@ -192,14 +197,19 @@ class productsController extends Controller
 
         if($table == 'active'){
 
-            $item=Item::find($id);
-            if($item->active){
-                $item->active = 0;
-            }else{
-                $item->active = 1;
+
+            if(count(Item::find($id)->fotos()->get())>0){
+                $item=Item::find($id);
+                if($item->active){
+                    $item->active = 0;
+                }else{
+                    $item->active = 1;
+                }
+                $item->save();
+                session(['success' => 'active']);
             }
-            $item->save();
-            
+            session(['error' => 'Voeg fotos toe']);
+
         }
 
         if($table == 'tag'){
@@ -212,7 +222,9 @@ class productsController extends Controller
 
             Item::find($id)->tags()->save($tag);
 
+            session(['success' => 'Tag']);
             return redirect('products/' . $id);
+
         }
 
 
@@ -230,6 +242,7 @@ class productsController extends Controller
 
             Item::find($id)->dimensions()->save($dimension);
 
+            session(['success' => 'Dimension']);
             return redirect('products/' . $id);
         }
 
@@ -239,7 +252,7 @@ class productsController extends Controller
             $color->type = $request->color;
 
             Item::find($id)->colors()->save($color);
-
+            session(['success' => 'COlor']);
             return redirect('products/' . $id);
         }
 
@@ -249,7 +262,7 @@ class productsController extends Controller
             $shape->shape = $request->shape;
 
             Item::find($id)->shapes()->save($shape);
-
+            session(['success' => 'Shape']);
             return redirect('products/' . $id);
         }
 
@@ -266,6 +279,7 @@ class productsController extends Controller
             $foto = new Item_foto;
             $foto->url = $new_file_name;
             Item::find($id)->fotos()->save($foto);
+            session(['success' => 'Foto']);
         }
         return redirect('products/' . $id);
     }
@@ -309,7 +323,7 @@ class productsController extends Controller
         $translation_nl->specification = $request->specification_nl;
         $item->translations()->save($translation_nl);
 
-
+        session(['success' => 'Update']);
         return redirect('products/' . $id_item);
     }
 }

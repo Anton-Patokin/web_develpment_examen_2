@@ -20,7 +20,7 @@ class CreateFaqsTable extends Migration
             $table->text('answer')->nullable();
 //            $table->integer('category_id')->nullable()->unsigned();
 //            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->boolean('about_us')->nullable();
+            $table->string('about_us')->nullable();
             $table->integer('item_id')->nullable()->unsigned();
             $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
             $table->softDeletes();

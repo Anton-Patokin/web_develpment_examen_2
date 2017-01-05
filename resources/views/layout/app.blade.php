@@ -48,7 +48,7 @@
 
 @if( !Request::is('login'))
     {{--//add hidden class!--}}
-    <div id="white-background" class="white-background" hidden>
+    <div id="white-background" class="white-background" >
         <div class="container-fluid">
             <div class='row'>
                 <div class="col-md-12">
@@ -56,7 +56,12 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="col-md-offset-1">
+                @include('faq.faq')
+            </div>
 
+        </div>
     </div>
 
     <div id="wrapper" class="toggled">

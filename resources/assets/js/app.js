@@ -1,9 +1,28 @@
 require('./bootstrap');
+// require('/faq_api');
 
 (function ($) {
     $(document).ready(function () {
 
+        var search_content;
+        $('#search_input').click(function () {
+            search_content = $(this).html();
+            $(this).html('');
+            $("#search_input").keypress(function (e) {
+                if (e.keyCode == 13) {
+                    $("#search_input").blur();
+                    e.preventDefault();
 
+// $(this).html(search_content);
+                }
+            });
+            console.log(search_content);
+        })
+
+        $('.clear_button').click(function () {
+            $('#search_input').html('');
+
+        })
 
         // $('.white-background').hide();
         $('.x-close').click(function () {
@@ -119,5 +138,40 @@ require('./bootstrap');
             $("html, body").animate({scrollTop: $(document).height()}, 1000);
         }
 
+        // if ($('.faq_box').is(":visible")) {
+        //     console.log('visibelle');
+        // }
+        // if ($('.faq_box').is(":visible")) {
+        //     console.log('visibelle');
+        // }
+        // getFaq(baseUrl);
+
     })
+
+
+    function getFaq(baseUrl) {
+        var jqxhr = $.getJSON(baseUrl + "api/get/faq", function (data) {
+                console.log(data);
+
+                $.each(data.data, function (key, val) {
+                    $('<div class="col-md-12 faq-container"><h3>' + val.question + '</h3><p class="col-md-12">' + val.answer + '</p></div>')
+                        .appendTo("#faq-container");
+
+                    console.log(val.question);
+                    console.log(val.answer);
+                });
+
+                $('error_message').hide();
+            })
+            .fail(function () {
+                $('error_message').show();
+            });
+
+    }
+
+    function pagination(page,curentpage) {
+
+    }
+
+
 })(jQuery)

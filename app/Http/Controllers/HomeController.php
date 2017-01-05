@@ -36,10 +36,11 @@ class HomeController extends Controller
     public function show_product($category, $id)
     {
 
-        $item_pagination = Item::orderBy('created_at', 'ASC')->paginate(20);
+        $item_pagination = Item::orderBy('created_at', 'ASC')->where('active',1)->paginate(20);
 
         $items_extra = [];
         foreach ($item_pagination as $key => $item) {
+//            return $item->fotos()->get()->first()->url;
             $items_extra[$item->id]['foto'] = $item->fotos()->get()->first()->url;
             $items_extra[$item->id]['category'] = $item->category()->first()->url;
         };

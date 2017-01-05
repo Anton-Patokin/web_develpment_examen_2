@@ -3,8 +3,30 @@
 
 @section('admin')
     <div class="container">
-
         <div class="row">
+
+            @if(Session::get('success'))
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-success">
+                            <strong>Success!</strong> {{Session::get('success')}} successful.
+                        </div>
+                        {{session()->forget('success')}}
+                    </div>
+                </div>
+            @endif
+
+                @if(Session::get('success')=="add")
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-success">
+                                <strong>Success!</strong> Add successful.
+                            </div>
+                            {{session()->forget('success')}}
+                        </div>
+                    </div>
+                @endif
+
             <div class="col-md-12">
                 {!! Form::open(['url' => '/add/faq']) !!}
 
@@ -88,15 +110,33 @@
                 {{Form::close()}}
             </div>
         </div>
+
         <div class="row">
-            <div class="col-md-12">
-                @foreach($faqs as $key=>$faq)
-                    <div class="col-md-12 faq-container">
-                        <h3>{{$faq->question}}</h3>
-                        <p class="col-md-12">{{$faq->answer}}</p>
-                    </div>
-                @endforeach
-            </div>
+
+            <hr>
+            @foreach($faqs as $key=>$faq)
+
+                <div class="col-md-6 faq-container">
+                    <h3>{{$faq->question}}</h3>
+                    <p class="col-md-12">{{$faq->answer}}</p>
+
+                    <a href="{{url('/get/faq/'.($faq->about_us != ''?'about_us':'item').
+                                            '/'.($faq->about_us != ''?$faq->about_us:$faq->item_id))}}">
+                        <button class="btn btn-default col-md-6">
+                            edit
+                        </button>
+                    </a>
+                    <a href="{{url('/delete/faq/'.($faq->about_us != ''?'about_us':'item').
+                                            '/'.($faq->about_us != ''?$faq->about_us:$faq->item_id))}}">
+                        <button class="btn btn-default col-md-6">
+                            delete
+                        </button>
+                    </a>
+
+                </div>
+
+            @endforeach
+
         </div>
     </div>
 @endsection

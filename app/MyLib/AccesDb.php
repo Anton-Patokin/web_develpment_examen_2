@@ -25,7 +25,7 @@ class AccesDB
     }
 
     public function get_items($hunk){
-        $four_first_items = Item::orderBy('position', 'ASC')->take($hunk)->get();
+        $four_first_items = Item::orderBy('position', 'ASC')->where('active','1')->take($hunk)->get();
         $items_with_translation = [];
         foreach ($four_first_items as $key => $item) {
             $items_with_translation[$key]['id'] =$item->id;

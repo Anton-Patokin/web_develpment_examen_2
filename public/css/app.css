@@ -8309,6 +8309,14 @@ ul.home-categories li:not(:last-child) {
   font-weight: bold;
 }
 
+.font-orange {
+  color: #e27500;
+}
+
+.font-grey {
+  color: #535353;
+}
+
 .cookie {
   position: absolute;
   top: 0;
@@ -8742,13 +8750,17 @@ ul.home-categories li:not(:last-child) {
 }
 
 #white-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
   z-index: 900;
-  background-color: rgba(255, 255, 255, 0.9);
+  border: medium none;
+  margin: 0pt;
+  padding: 0pt;
+  width: 100%;
+  height: 100%;
+  top: 0pt;
+  bottom: 0px;
+  overflow-y: scroll;
+  background-color: rgba(255, 255, 255, 0.95);
+  position: fixed;
 }
 
 .x-close:hover {
@@ -8758,7 +8770,7 @@ ul.home-categories li:not(:last-child) {
 .faq-container {
   background-color: #fff;
   margin-top: 15px;
-  box-shadow: 0px 2px 17px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .faq-container h3 {
@@ -8768,6 +8780,28 @@ ul.home-categories li:not(:last-child) {
 
 .faq-container p {
   margin-top: -10px;
+}
+
+#search_input {
+  margin-top: 25px;
+  font-size: 30px;
+  border-bottom: 2px solid #535353;
+  padding: 0px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+#search_input:focus {
+  outline: none;
+}
+
+.clear_button:hover {
+  cursor: pointer;
+}
+
+.faq_extra_info {
+  margin-top: 30px;
+  margin-bottom: -5px;
 }
 
 .uppercase {
