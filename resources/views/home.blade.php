@@ -10,10 +10,10 @@
             @include('home.categories')
             @include('home.hot-items')
             @include('home.subscribe')
+
         </div>
-
-
     </div>
+
 @endsection
 
 

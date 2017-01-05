@@ -26,9 +26,9 @@
                         <a href="{{url('/set_cookie')}}">{{trans('messages.set_cookie')}}</a>
                     </button>
                 </div>
-                
+
             </div>
-            
+
         </div>
     </div>
 @else
@@ -47,6 +47,18 @@
 
 
 @if( !Request::is('login'))
+    {{--//add hidden class!--}}
+    <div id="white-background" class="white-background" hidden>
+        <div class="container-fluid">
+            <div class='row'>
+                <div class="col-md-12">
+                    <img class="pull-right x-close" src="{{url('/images/white-background/x_close.png')}}">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <div id="wrapper" class="toggled">
         <!-- Sidebar -->
         @include('layout.navbar')

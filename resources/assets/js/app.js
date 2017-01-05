@@ -3,13 +3,33 @@ require('./bootstrap');
 (function ($) {
     $(document).ready(function () {
 
-        $('.nav-hide').hide();
 
+
+        // $('.white-background').hide();
+        $('.x-close').click(function () {
+            $('.white-background').hide();
+            remove_active_clas();
+        })
+
+        $('.white-background-click').click(function (event) {
+            event.preventDefault();
+            remove_active_clas();
+            $('.' + event.target.id).addClass('active')
+
+            $('.white-background').show();
+        })
+
+        function remove_active_clas() {
+            $('.faq').removeClass('active');
+            $('.search').removeClass('active');
+        }
+
+
+        $('.nav-hide').hide();
         $('.pagination-items-right').click(function () {
             console.log('click-rigth');
             $('#item-carousel').animate({'scrollLeft': '+=1000px'}, "slow");
         });
-
         $('.pagination-items-left').click(function () {
             console.log('click-left');
             $('#item-carousel').animate({'scrollLeft': '-=1000px'}, "slow");
@@ -58,8 +78,8 @@ require('./bootstrap');
             $(".nav-devider").toggleClass("active");
             $('.logo_k').toggleClass('active');
             // $('.nav-hide').toggle();
-            if ( $('.nav-hide').is( ":hidden" ) ) {
-                $('.nav-hide').slideDown( "slow" );
+            if ($('.nav-hide').is(":hidden")) {
+                $('.nav-hide').slideDown("slow");
             } else {
                 $('.nav-hide').slideUp();
             }

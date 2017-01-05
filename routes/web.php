@@ -50,3 +50,5 @@ Route::get('test', function () {
     return view('user.login');
 });
 Route::post('/about_us' , 'AboutUsController@send_mail');
+Route::get('//faq','FaqController@index');
+Route::post('/add/faq','FaqController@add_faq');

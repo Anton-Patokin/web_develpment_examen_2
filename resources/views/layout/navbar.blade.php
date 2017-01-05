@@ -1,24 +1,12 @@
 @if( Auth::check())
-    <div class="container">
-        <div class="col-md-offset-1">
-            <nav class="navbar navbar-default navbar-fixed-top">
-                <ul class="nav navbar-nav">
-                    <li class=""><a href="{{url('/logout')}}">Logout</a></li>
-                    <li class=""><a href="{{url('/products')}}">Products</a></li>
-                    <li class=""><a href="{{url('/')}}">Website</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <br>
-    <br>
+@include('admin-items.admin_navbar')
 @endif
 
 <div id="sidebar-wrapper" class="choplin-font">
     <ul class="sidebar-nav menu">
         <li class="menu-toggle hamburger ie "><span></span></li>
-        <li class="search"><a class="font-gray" href="">Search</a></li>
-        <li class="faq"><a class="font-gray" href="">FAQ</a></li>
+        <li class="search"><a id="search" class="font-gray white-background-click" href="">Search</a></li>
+        <li  class="faq"><a id="faq" class="font-gray white-background-click" href="">FAQ</a></li>
         <hr class="nav-devider nav-hide">
         <li class="email nav-email-style nav-hide {{(Request::is('*/about-us')?'active':'')}}"><a class="font-gray "
                                                                                               href="{{url('/about-us')}}">Contact</a></li>
