@@ -186,7 +186,7 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            {{Form::submit('Add product')}}
+                            {{Form::submit('Edit product',array('class'=>'btn btn-default'))}}
                         </div>
                     </div>
                     {{ Form::close()}}

@@ -159,6 +159,8 @@ class productsController extends Controller
     public function destroy($id)
     {
         $item = Item::find($id);
+        $translation = $item->translations();
+        $translation->delete();
         $item->delete();
         return redirect('/products');
     }

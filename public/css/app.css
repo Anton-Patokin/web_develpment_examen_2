@@ -8755,6 +8755,21 @@ ul.home-categories li:not(:last-child) {
   cursor: pointer;
 }
 
+.faq-container {
+  background-color: #fff;
+  margin-top: 15px;
+  box-shadow: 0px 2px 17px 0px rgba(0, 0, 0, 0.75);
+}
+
+.faq-container h3 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.faq-container p {
+  margin-top: -10px;
+}
+
 .uppercase {
   text-transform: uppercase;
 }

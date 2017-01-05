@@ -38,6 +38,9 @@ class Item extends Model
     {
         return $this->belongsTo('App\Category');
     }
-
+    public function faqs()
+    {
+        return $this->hasMany('App\Faq');
+    }
     protected $dates = ['deleted_at'];
 }

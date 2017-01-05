@@ -3,6 +3,7 @@
 
 @section('admin')
     <div class="container">
+
         <div class="row">
             <div class="col-md-12">
                 {!! Form::open(['url' => '/add/faq']) !!}
@@ -58,11 +59,43 @@
 
 
                 <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{Form::label('show_in', 'Position',array('class'=>'label-control'))}}
+                            <select id="show_in" name="show_in" class="form-control">
+                                <optgroup label="About us">
+                                    <option value="about_us" selected>About us</option>
+                                </optgroup>
+
+                                <optgroup label="Products">
+                                    @foreach($items as $item)
+                                        <option value="{{$item->item_id}}" {{(old('show_in')==$item->item_id?'selected':'')}}>{{$item->title}}</option>
+                                    @endforeach
+                                </optgroup>
+                            </select>
+                            @if($errors->has('show_in'))
+                                <div class="alert alert-danger">
+                                    <strong>Warning!</strong> {{$errors->first('show_in')}}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+
                     <div class="col-md-1">
                         {{Form::submit('Add',array('class'=>'btn btn-default'))}}
                     </div>
                 </div>
                 {{Form::close()}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @foreach($faqs as $key=>$faq)
+                    <div class="col-md-12 faq-container">
+                        <h3>{{$faq->question}}</h3>
+                        <p class="col-md-12">{{$faq->answer}}</p>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
