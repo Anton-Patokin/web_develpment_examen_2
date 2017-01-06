@@ -6,13 +6,17 @@
     <ul class="sidebar-nav menu">
         <li class="menu-toggle hamburger ie "><span></span></li>
         <li class="search"><a id="search" class="font-gray white-background-click" href="">Search</a></li>
-        <li  class="faq"><a id="faq" class="font-gray white-background-click" href="">FAQ</a></li>
-        <hr class="nav-devider nav-hide">
-        <li class="email nav-email-style nav-hide {{(Request::is('*/about-us')?'active':'')}}"><a class="font-gray "
+        <li  class="faq {{(Request::is('*/search/faq/*')?'active':'')}}"><a id="faq" class="font-gray white-background-click" href="{{url('/search/faq/all')}}">FAQ</a></li>
+        <div class="nav-hide" hidden>
+            <hr class="nav-devider ">
+        </div>
+
+        <li class="email nav-email-style nav-hide {{(Request::is('*/about-us')?'active':'')}}" hidden><a class="font-gray "
                                                                                               href="{{url('/about-us')}}">Contact</a></li>
         <hr class="nav-devider">
         @foreach($categories as $category)
-            <li class=" {{$category['category']->url}} @if(Request::is('*/'.$category['category']->url))
+            <li class=" {{$category['category']->url}}
+            @if(Request::is('*/'.$category['category']->url))
             {{'active'}}
             @else
             @if(Request::is('*/'.$category['category']->url.'/*'))

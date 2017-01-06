@@ -17,5 +17,3 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 
 })->middleware('auth:api');
-Route::get('/get/faq','ApiController@get_faq');
-Route::get('/search/faq/{string}','ApiController@search_faq');

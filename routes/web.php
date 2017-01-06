@@ -33,7 +33,7 @@ Route::group(
         Route::get('/product/{category}','HomeController@show_category_product');
         Route::get('/product/{category}/{id}','HomeController@show_product');
         Route::get('/about-us','HomeController@about_us');
-
+        Route::get('/search/faq/{string}','FaqController@show_users_faq');
     });
 
 
@@ -59,3 +59,5 @@ Route::get('/delete/faq/{room}/{id}','FaqController@delete_faq');
 
 
 
+
+//Route::get('/search/faq/{string}','ApiController@search_faq');

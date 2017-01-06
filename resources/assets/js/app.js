@@ -3,6 +3,9 @@ require('./bootstrap');
 
 (function ($) {
     $(document).ready(function () {
+        var getUrl = window.location;
+        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1] + '/public/';
+
 
         var search_content;
         $('#search_input').click(function () {
@@ -12,6 +15,7 @@ require('./bootstrap');
                 if (e.keyCode == 13) {
                     $("#search_input").blur();
                     e.preventDefault();
+                    window.location.replace(baseUrl+"/search/faq/"+$(this).html());
 
 // $(this).html(search_content);
                 }
@@ -30,13 +34,13 @@ require('./bootstrap');
             remove_active_clas();
         })
 
-        $('.white-background-click').click(function (event) {
-            event.preventDefault();
-            remove_active_clas();
-            $('.' + event.target.id).addClass('active')
-
-            $('.white-background').show();
-        })
+        // $('.white-background-click').click(function (event) {
+        //     // event.preventDefault();
+        //     remove_active_clas();
+        //     $('.' + event.target.id).addClass('active')
+        //
+        //     $('.white-background').show();
+        // })
 
         function remove_active_clas() {
             $('.faq').removeClass('active');
@@ -61,9 +65,7 @@ require('./bootstrap');
             $(this).find('.image2').hide();
         })
 
-        var getUrl = window.location;
-        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1] + '/public/';
-        console.log(baseUrl);
+
 
 
         $('.img-small').click(function () {

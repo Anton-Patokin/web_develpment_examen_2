@@ -20,6 +20,23 @@ class FaqController extends Controller
         $this->language = LaravelLocalization::getCurrentLocale();
     }
 
+
+
+    public  function show_users_faq($string){
+        $faqs="";
+        if($string == 'all'){
+             $faqs = Faq::inRandomOrder()->paginate(5);
+        }else{
+            $faqs= Faq::where('question', 'like', '%' . $string . '%')
+                ->orWhere('answer', 'like', '%' . $string . '%')->paginate(5);
+        }
+//        return view('white_background/white')
+        return view('faq/faq')
+            ->with('categories', $this->custom_selector->get_categories())
+            ->with('items', $this->custom_selector->get_items(4))->with('faqs',$faqs);
+
+    }
+
     public function index()
     {
         $items = Item_translation::where('locale', 'nl')->get();
