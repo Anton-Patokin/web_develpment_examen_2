@@ -13,17 +13,24 @@
 
         </div>
     </div>
-    <div id="white-background" class="white-background" >
+    <div id="white-background" class="white-background">
         <div class="container-fluid">
             <div class='row'>
                 <div class="col-md-12">
-                    <img class="pull-right x-close" src="{{url('/images/white-background/x_close.png')}}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-1"> @yield('filter')</div>
+                            <img class="pull-right x-close"
+                                 src="{{url('/images/white-background/x_close.png')}}">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="col-md-offset-1">
                 @yield('white_content')
+
             </div>
 
         </div>

@@ -78,6 +78,7 @@
     {{--</div>--}}
     {{--</div>--}}
 
+{{--    @yield('extra_javascript')--}}
     <script src="{{url('/js/app.js')}}"></script>
 </body>
 </html>

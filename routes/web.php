@@ -34,6 +34,7 @@ Route::group(
         Route::get('/product/{category}/{id}','HomeController@show_product');
         Route::get('/about-us','HomeController@about_us');
         Route::get('/search/faq/{string}','FaqController@show_users_faq');
+        Route::get('/search/items','SearchController@index');
     });
 
 

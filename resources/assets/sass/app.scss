@@ -19,6 +19,7 @@
 @import "about_us/about_us";
 @import "white-background/white-background";
 @import "faq/faq";
+@import "filter/filter";
 
 .uppercase {
   text-transform: uppercase;
@@ -42,6 +43,7 @@ textarea.form-control {
   color: $text-color_white !important;
   border-radius: 0px;
 }
+
 textarea.form-control::-webkit-input-placeholder {
   color: $text-color_white;
 }
@@ -103,3 +105,34 @@ input.form-control:-ms-input-placeholder {
   font-family: 'Choplin-Medium-DEMO', "Arial";
 }
 
+.pagination > li > a,
+.pagination > li > span {
+  color: #fff; // use your own color here
+  background-color: #e27500;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  background-color: #fff;
+  color: #e27500;
+  border-color: $text-color_white;
+}
+
+.caret {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid $text-color_white;
+}
+
+.caret-right {
+
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+  border-left: 8px solid $text-color_white;
+  display: inline-block;
+  margin-left: 5px;
+}

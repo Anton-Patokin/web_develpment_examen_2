@@ -5,7 +5,7 @@
 <div id="sidebar-wrapper" class="choplin-font">
     <ul class="sidebar-nav menu">
         <li class="menu-toggle hamburger ie "><span></span></li>
-        <li class="search"><a id="search" class="font-gray white-background-click" href="">Search</a></li>
+        <li class="search {{(Request::is('*/search/items')?'active':'')}}"><a id="search" class="font-gray white-background-click" href="{{url('/search/items')}}">Search</a></li>
         <li  class="faq {{(Request::is('*/search/faq/*')?'active':'')}}"><a id="faq" class="font-gray white-background-click" href="{{url('/search/faq/all')}}">FAQ</a></li>
         <div class="nav-hide" hidden>
             <hr class="nav-devider ">

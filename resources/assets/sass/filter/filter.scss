@@ -1,0 +1,36 @@
+.filter-elemnts {
+  margin-top: 5px;
+}
+
+.checkbox-margin {
+  margin-top: -10px;
+  margin-right: 20px;
+  display: inline-block;
+  float: left;
+}
+
+.checkbox-margin input[type="checkbox"] {
+  //display: none;
+}
+
+.checkbox-label{
+  display: block;
+  line-height: 25px;
+}
+.radio-custom:before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  border-radius: 0;
+  background-color: #fff;
+  border: 1px solid $text-color_white;
+}
+
+.radio-custom:checked:before {
+  content: '\2714';
+  color: #000;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 10px;
+}
