@@ -54,8 +54,3 @@
 @section('filter')
     <h3 id="advanced_filter" class="font-grey">Advanced filter<span class="caret-right"></span></h3>
 @endsection
-
-{{--@extends('layout.app')--}}
-{{--@section('extra_javascript')--}}
-    {{----}}
-{{--@endsection--}}

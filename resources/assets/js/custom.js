@@ -1,1 +1,0 @@
-alert('hallo this is costum test');

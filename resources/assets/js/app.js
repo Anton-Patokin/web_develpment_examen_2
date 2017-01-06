@@ -1,7 +1,7 @@
 require('./bootstrap');
 
 // require('/faq_api');
-
+require('./components/custom.js');
 (function ($) {
     $(document).ready(function () {
         var getUrl = window.location;
