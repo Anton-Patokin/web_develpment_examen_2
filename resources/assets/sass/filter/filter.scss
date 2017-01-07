@@ -13,10 +13,11 @@
   //display: none;
 }
 
-.checkbox-label{
+.checkbox-label {
   display: block;
   line-height: 25px;
 }
+
 .radio-custom:before {
   content: '';
   width: 15px;
@@ -33,4 +34,33 @@
   display: inline-block;
   font-size: 15px;
   line-height: 10px;
+}
+
+.price-box {
+  border: 1px solid $text-color_white;
+  padding: 0;
+  margin-top: 15px;
+  .price_number {
+    text-align: center;
+    margin: 5px;
+    font-size: 20px;
+  }
+  .euro-teken {
+    text-align: left;
+  }
+}
+
+.align-center {
+  margin-top: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.ui-slider-horizontal .ui-state-default {
+  background: #535353;
+  border-radius: 50%;
+  margin-top: -3px;
+}
+.ui-slider-horizontal{
+  height: 2px;
 }

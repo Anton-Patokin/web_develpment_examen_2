@@ -22,7 +22,10 @@ require('./components/custom.js');
                 if (e.keyCode == 13) {
                     $("#search_input").blur();
                     e.preventDefault();
-                    window.location.replace(baseUrl + "/search/faq/" + $(this).html());
+                    if($(this).html()!=""){
+                        window.location.replace(baseUrl + "/search/faq/" + $(this).html());
+                    }
+
 
 // $(this).html(search_content);
                 }

@@ -24,12 +24,12 @@
                 </div>
                 <div class="col-md-5">
                     <h4>Price range</h4>
-                    <p>
-                        <label for="amount">Price range:</label>
-                        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-                    </p>
-
-                    <div id="slider-range"></div>
+                    <div  id="slider-range"></div>
+                    <div id="amount_1" class="price-box col-md-5"></div>
+<p class="col-md-2 align-center">-</p>
+                    <div id="amount_2" class="price-box col-md-5"></div>
+                    <input type="text" id="input_amount_1" name="price_1" hidden>
+                    <input type="text" id="input_amount_2" name="price_1" hidden>
                 </div>
             </div>
         </div>

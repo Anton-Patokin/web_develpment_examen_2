@@ -10834,6 +10834,38 @@ ul.home-categories li:not(:last-child) {
   line-height: 10px;
 }
 
+.price-box {
+  border: 1px solid #b2b2b2;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.price-box .price_number {
+  text-align: center;
+  margin: 5px;
+  font-size: 20px;
+}
+
+.price-box .euro-teken {
+  text-align: left;
+}
+
+.align-center {
+  margin-top: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.ui-slider-horizontal .ui-state-default {
+  background: #535353;
+  border-radius: 50%;
+  margin-top: -3px;
+}
+
+.ui-slider-horizontal {
+  height: 2px;
+}
+
 .uppercase {
   text-transform: uppercase;
 }

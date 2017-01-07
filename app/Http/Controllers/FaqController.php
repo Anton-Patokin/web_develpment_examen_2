@@ -24,7 +24,8 @@ class FaqController extends Controller
 
     public  function show_users_faq($string){
         $faqs="";
-        if($string == 'all'){
+        if($string == 'all' || $string == ''){
+            $string == 'all';
              $faqs = Faq::inRandomOrder()->paginate(5);
         }else{
             $faqs= Faq::where('question', 'like', '%' . $string . '%')
