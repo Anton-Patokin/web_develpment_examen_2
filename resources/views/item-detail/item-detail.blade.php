@@ -117,6 +117,13 @@
                                 <a href="{{url('/view/more/'.$item->category->id)}}"> <p class="choplin-font font-white pull-right">view more</p></a>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12  font-white">
+                                <h1 class="choplin-font uppercase">Frequently asked questions</h1>
+                            </div>
+                        </div>
+
+                        @include('item-detail.item-faq')
 
                         {{--{{ $item_pagination->links() }}--}}
                     </div>

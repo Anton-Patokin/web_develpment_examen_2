@@ -7,6 +7,7 @@ use App\Category;
 use LaravelLocalization;
 use App\Item;
 use App\MyLib\AccesDB;
+use App\Faq;
 
 class HomeController extends Controller
 {
@@ -36,7 +37,7 @@ class HomeController extends Controller
     public function show_product($category, $id)
     {
 
-        $item_pagination = Item::orderBy('created_at', 'ASC')->where('active',1)->paginate(20);
+        $item_pagination = Item::orderBy('created_at', 'ASC')->where('active', 1)->paginate(20);
 
         $items_extra = [];
         foreach ($item_pagination as $key => $item) {
@@ -46,10 +47,14 @@ class HomeController extends Controller
         };
 
         $translation = '';
+        $faqs='';
+
         $item = Item::find($id);
         if ($item && $item->active) {
             $item = Item::find($id)->with('category', 'colors', 'fotos', 'tags', 'dimensions', 'shapes')->where('id', $id)->get()->first();
             $translation = $item->translations()->where('locale', $this->language)->get()->first();
+            $faqs =$item->faqs()->where('locale', $this->language)->get();
+
 
         } else {
             $item = 'false';
@@ -57,12 +62,20 @@ class HomeController extends Controller
 
         return view('item-detail/item-detail')
             ->with('categories', $this->custom_selector->get_categories())
-            ->with('item', $item)->with('translation', $translation)->with('item_pagination', $item_pagination)->with('items_extra', $items_extra);
+            ->with('item', $item)
+            ->with('faqs',$faqs)
+            ->with('translation', $translation)
+            ->with('item_pagination', $item_pagination)
+            ->with('items_extra', $items_extra);
+
     }
 
     public function about_us()
     {
+
+        $faqs= Faq::where('about_us','!=',"")->get();
         return view('about-us/about-us')
-            ->with('categories', $this->custom_selector->get_categories());
+            ->with('categories', $this->custom_selector->get_categories())
+            ->with('faqs',$faqs);
     }
 }

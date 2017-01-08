@@ -122,6 +122,19 @@ input.form-control:-ms-input-placeholder {
   color: #e27500;
   border-color: $text-color_white;
 }
+.caret-white {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #fff;
+}
+
+.caret-right-white{
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+  border-left: 8px solid #fff;
+  display: inline-block;
+  margin-left: 5px;
+}
 
 .caret {
   border-left: 8px solid transparent;

@@ -9684,6 +9684,21 @@ a.ui-button:active,
   box-shadow: 0px 0px 5px #666666;
 }
 
+.arcoodion_box {
+  margin-top: 10px;
+  background-color: #717171;
+  color: #fff;
+}
+
+.arcoodion_box h3 {
+  margin: 5px;
+  padding: 5px;
+}
+
+.faq_text {
+  padding: 10px;
+}
+
 #wrapper {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
@@ -10311,6 +10326,10 @@ ul.home-categories li:not(:last-child) {
 
 .font-grey {
   color: #535353;
+}
+
+.font-20 {
+  font-size: 20px;
 }
 
 .cookie {
@@ -10961,6 +10980,20 @@ input.form-control:-ms-input-placeholder {
   background-color: #fff;
   color: #e27500;
   border-color: #b2b2b2;
+}
+
+.caret-white {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #fff;
+}
+
+.caret-right-white {
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+  border-left: 8px solid #fff;
+  display: inline-block;
+  margin-left: 5px;
 }
 
 .caret {
