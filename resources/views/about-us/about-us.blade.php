@@ -115,7 +115,13 @@
 
 
                 </div>
+
+
             </div>
+
+                @include('faq.acoordion')
+
+
         </div>
     </div>
 @endsection

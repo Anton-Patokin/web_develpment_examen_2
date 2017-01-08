@@ -114,16 +114,13 @@
                                 @include('item-detail.item-carousel')
                             </div>
                             <div class="col-md-12">
-                                <a href="{{url('/view/more/'.$item->category->id)}}"> <p class="choplin-font font-white pull-right">view more</p></a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12  font-white">
-                                <h1 class="choplin-font uppercase">Frequently asked questions</h1>
+                                <a href="{{url('/view/more/'.$item->category->id)}}"><p
+                                            class="choplin-font font-white pull-right">view more</p></a>
                             </div>
                         </div>
 
-                        @include('item-detail.item-faq')
+
+                        @include('faq.acoordion')
 
                         {{--{{ $item_pagination->links() }}--}}
                     </div>
