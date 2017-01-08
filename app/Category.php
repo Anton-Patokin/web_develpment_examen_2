@@ -10,5 +10,9 @@ class Category extends Model
     {
         return $this->hasMany('App\Category_translation');
     }
+    public function items()
+    {
+        return $this->hasMany('App\Item');
+    }
     
 }

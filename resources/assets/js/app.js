@@ -7,26 +7,47 @@ require('./components/custom.js');
         var getUrl = window.location;
         var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1] + '/public/';
 
+
+
         $('#advanced_filter').click(function () {
             console.log('okey');
+            $('.filter-elemnts').slideToggle();
             $('#advanced_filter').find('span:first').toggleClass('caret');
             $('#advanced_filter').find('span:first').toggleClass('caret-right');
         });
 
 
+        $('.search_box').click(function () {
+            search_content = $(this).html();
+            $(this).html('');
+            $("#search_input").keypress(function (e) {
+
+                if (e.keyCode == 13) {
+                    e.preventDefault();
+                    if($(this).html()!=""){
+                        $('#search_word').val($(this).html());
+                        $("#target").submit();
+                    }
+// $(this).html(search_content);
+                }
+            });
+            console.log(search_content);
+        })
+
+
+
         var search_content;
-        $('#search_input').click(function () {
+        $('.faq_search_box').click(function () {
             search_content = $(this).html();
             $(this).html('');
             $("#search_input").keypress(function (e) {
                 if (e.keyCode == 13) {
+
                     $("#search_input").blur();
                     e.preventDefault();
                     if($(this).html()!=""){
                         window.location.replace(baseUrl + "/search/faq/" + $(this).html());
                     }
-
-
 // $(this).html(search_content);
                 }
             });

@@ -10866,6 +10866,14 @@ ul.home-categories li:not(:last-child) {
   height: 2px;
 }
 
+.search-input-margin-top {
+  margin-top: 50px;
+}
+
+.search_item_a:hover {
+  color: #000;
+}
+
 .uppercase {
   text-transform: uppercase;
 }

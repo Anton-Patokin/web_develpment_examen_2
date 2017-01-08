@@ -9,12 +9,17 @@
                 <h1 class="choplin-font font-orange uppercase">Frequently Asked Questions</h1>
             </div>
             <div class="col-md-12">
-                <div class="col-md-12" id="search_input" contenteditable="true"><img
+                <div class="col-md-12 faq_search_box" id="search_input" contenteditable="true"><img
                             src="{{url('/images/white-background/search.png')}}"> Search
                     on keyword <img src="{{url('/images/white-background/enter.png')}}"></div>
             </div>
             <div class="col-md-12">
-                <img class=" pull-right clear_button" src="{{url('/images/white-background/clear.png')}}">
+                @if(count($faqs)>0 && $word != 'all')
+                    <p class="col-md-10 ">{{count($faqs)}} for the word '{{$word}}'</p>
+                @endif
+
+                    <img class=" pull-right clear_button" src="{{url('/images/white-background/clear.png')}}">
+
             </div>
             <div class="col-md-12 font-grey ">
                 <p class="faq_extra_info">Don’t find what you’re looking for?</p>

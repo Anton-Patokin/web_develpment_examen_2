@@ -34,7 +34,7 @@ class FaqController extends Controller
 //        return view('white_background/white')
         return view('faq/faq')
             ->with('categories', $this->custom_selector->get_categories())
-            ->with('items', $this->custom_selector->get_items(4))->with('faqs',$faqs);
+            ->with('items', $this->custom_selector->get_items(4))->with('faqs',$faqs)->with('word',$string);
 
     }
 
