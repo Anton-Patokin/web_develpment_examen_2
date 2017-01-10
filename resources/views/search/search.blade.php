@@ -1,6 +1,8 @@
 @extends('white_background.white')
 
-
+@section('header')
+    <title>Search-products-Kowloon</title>
+@endsection
 @section('white_content')
     {{--    {{Form::open([url('/search/items'), 'method' => 'post','id'=>'target'])}}--}}
     {{ Form::open(array('url' => '/search/filter/items', 'method' => 'get', 'id'=>'target')) }}

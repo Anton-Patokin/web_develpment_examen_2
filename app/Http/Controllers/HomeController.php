@@ -29,9 +29,27 @@ class HomeController extends Controller
 
     public function show_category_product($category)
     {
-        return view('item-detail/item-detail')
+
+        $items = Category::where('url', $category)->first()->items()->get();
+        
+        $items_extra = [];
+
+        foreach ($items as $key => $item) {
+            if ($item && $item->active) {
+//            return $item->fotos()->get()->first()->url;
+                $items_extra[$item->id]['foto'] = $item->fotos()->get()->first()->url;
+                $items_extra[$item->id]['translation'] = $item->translations()->where('locale', $this->language)->get()->first();
+                $items_extra[$item->id]['colors'] = $item->colors();
+                $items_extra[$item->id]['collection'] = $item->collection;
+                $items_extra[$item->id]['category'] = $item->category()->first()->url;
+            }
+        };
+        return view('category/category')
             ->with('categories', $this->custom_selector->get_categories())
-            ->with('items', $this->custom_selector->get_items(4));
+            ->with('items', $items)
+            ->with('extra', $items_extra);
+
+
     }
 
     public function show_product($category, $id)
@@ -47,13 +65,13 @@ class HomeController extends Controller
         };
 
         $translation = '';
-        $faqs='';
+        $faqs = '';
 
         $item = Item::find($id);
         if ($item && $item->active) {
             $item = Item::find($id)->with('category', 'colors', 'fotos', 'tags', 'dimensions', 'shapes')->where('id', $id)->get()->first();
             $translation = $item->translations()->where('locale', $this->language)->get()->first();
-            $faqs =$item->faqs()->where('locale', $this->language)->get();
+            $faqs = $item->faqs()->where('locale', $this->language)->get();
 
 
         } else {
@@ -63,7 +81,7 @@ class HomeController extends Controller
         return view('item-detail/item-detail')
             ->with('categories', $this->custom_selector->get_categories())
             ->with('item', $item)
-            ->with('faqs',$faqs)
+            ->with('faqs', $faqs)
             ->with('translation', $translation)
             ->with('item_pagination', $item_pagination)
             ->with('items_extra', $items_extra);
@@ -73,9 +91,9 @@ class HomeController extends Controller
     public function about_us()
     {
 
-        $faqs= Faq::where('about_us','!=',"")->get();
+        $faqs = Faq::where('about_us', '!=', "")->get();
         return view('about-us/about-us')
             ->with('categories', $this->custom_selector->get_categories())
-            ->with('faqs',$faqs);
+            ->with('faqs', $faqs);
     }
 }

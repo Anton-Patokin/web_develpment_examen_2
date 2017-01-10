@@ -1,5 +1,7 @@
 @extends('layout.app')
-
+@section('header')
+    <title>About us-Contact us-Kowloon</title>
+@endsection
 
 @section('content')
     @include('logo-top')

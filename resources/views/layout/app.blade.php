@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kowloon</title>
     <link href="{{url('/css/app.css')}}" rel="stylesheet">
     @yield('header')
 

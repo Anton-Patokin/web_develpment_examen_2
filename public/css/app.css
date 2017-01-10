@@ -10894,6 +10894,10 @@ ul.home-categories li:not(:last-child) {
   color: #000;
 }
 
+.margin-top-items-category {
+  padding-top: 15px;
+}
+
 .uppercase {
   text-transform: uppercase;
 }

@@ -18,7 +18,7 @@
                                     alt="{{$item['title']}}"></a>
                         <p class="img-hover-text">{{($key!=3)?trans('messages.detail'):trans('messages.more')}}</p>
                         <ul class="colors">
-                            @if(count($item['color'])< 3)
+                            @if(count($item['color'])<= 3)
                                 @foreach($item['color'] as $color)
                                     <li class="color-circel color-{{$color->type}}"></li>
                                 @endforeach

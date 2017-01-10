@@ -37,6 +37,7 @@ Route::group(
         Route::get('/search/items','SearchController@index');
         Route::get('/search/filter/items','SearchController@search')->where(['price_1' => '^[a-zA-Z0-9_.-]*$',
             'price_2' => '^[a-zA-Z0-9_.-]*$','string' => '^[a-zA-Z0-9_.-]*$','page' => '^[a-zA-Z0-9_.-]*$']);
+       
 
     });
 

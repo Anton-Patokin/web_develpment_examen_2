@@ -6,22 +6,31 @@
         <div class="row">
             <div class="col-md-11 col-md-offset-1">
                 @foreach ($items as $key=>$item)
-                    <div class="col-sm-4 col-md-3">
-                        <div class="thumbnail">
-                            <img src="{{url('/images/items/small/'.($items_extra[$item->id]['foto']?$items_extra[$item->id]['foto']->url:'default.png'))}}"
-                                 alt="...">
-                            <div class="caption">
-                                @if($items_extra[$item->id]['translation'])
-                                    <h3>{{$items_extra[$item->id]['translation']->title}}</h3>
-                                @endif
-                                <p>{{$item->price}}</p>
-                                <p>
-                                        <a href="{{url('/products/'.$item->id)}}" class="btn btn-primary" role="button">{{($items_extra[$item->id]['foto'])?'Update':'Complete'}} </a>
-                                    {{Form::open(['url' => '/products/'.$item->id,'method' => 'DELETE'])}}
-                                    {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
-                                    {{ Form::close() }}
-                                </p>
+                    <div class=" col-md-4">
+                        <div class="col-lg-12">
+                            <div class="thumbnail">
+                                <img src="{{url('/images/items/small/'.($items_extra[$item->id]['foto']?$items_extra[$item->id]['foto']->url:'default.png'))}}"
+                                     alt="...">
+                                <div class="caption">
+                                    @if($items_extra[$item->id]['translation'])
+                                        <h3>{{$items_extra[$item->id]['translation']->title}}</h3>
+                                    @endif
+                                    <p>{{$item->price}}</p>
 
+                                    <div class="col-md-6">
+                                        <a href="{{url('/products/'.$item->id)}}" class="btn btn-primary" role="button">
+                                            {{($items_extra[$item->id]['foto'])?'Update':'Complete'}}
+                                        </a>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{Form::open(['url' => '/products/'.$item->id,'method' => 'DELETE'])}}
+                                        {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+                                        {{ Form::close() }}
+                                        <br>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,6 +1,7 @@
 @extends('layout.app')
-
-
+@section('header')
+    <title>home-Kowloon</title>
+@endsection
 @section('content')
     @include('logo-top')
     <div class="container-fluid">

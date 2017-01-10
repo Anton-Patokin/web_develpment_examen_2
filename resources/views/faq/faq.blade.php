@@ -1,6 +1,8 @@
 @extends('white_background.white')
 
-
+@section('header')
+    <title>FAQ-search-Kowloon</title>
+@endsection
 @section('white_content')
     <div class="faq_box">
 
