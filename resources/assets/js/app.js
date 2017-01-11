@@ -16,6 +16,14 @@ require('./components/custom.js');
             $('#advanced_filter').find('span:first').toggleClass('caret-right');
         });
 
+        $('#advanced_filter_small').click(function () {
+
+            $('.filter-elemnts').slideToggle();
+            $('#advanced_filter_small').find('span:first').toggleClass('caret-small');
+            $('#advanced_filter_small').find('span:first').toggleClass('caret-right-small');
+        });
+
+
 
         $('.search_box').click(function () {
             search_content = $(this).html();

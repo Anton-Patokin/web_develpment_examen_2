@@ -19,6 +19,67 @@
                     </ul>
                 </div>
             </div>
+            <div class="col-md-12">
+                <h1 class="choplin-font uppercase font-white col-md-12">Dog articles</h1>
+            </div>
+            <div class="col-md-12">
+                <h4 id="advanced_filter_small" class="col-md-12 choplin-font">Filter<span
+                            class="caret-right-small"></span></h4>
+            </div>
+            <div class="col-md-12">
+                <div class="row filter-elemnts col-md-offset-1" hidden>
+                    <div class="col-md-12 font-size-search">
+                        <h4 class="font-20">Category</h4>
+                        @foreach(['Splash´n Fun','Luxury','new','on sale','other'] as $category)
+                            <div class="checkbox-margin">
+                                <div class="checkbox">
+                                    <label class="checkbox-label">
+                                        {{Form::checkbox($category,$category,false,array('class'=>'radio-custom'))}} {{$category}}
+                                    </label>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="col-md-12">
+                        <h4 class="font-20">Price range</h4>
+                        <div id="slider-range" class="col-md-5 category"></div>
+                        <div class="col-md-6 col-md-offset-1">
+                            <div id="amount_1" class="price-box category col-md-5"></div>
+                            <p class="col-md-2 line-category">-</p>
+                            <div id="amount_2" class="price-box category col-md-5"></div>
+                            <input type="text" id="input_amount_1" name="price_1" hidden>
+                            <input type="text" id="input_amount_2" name="price_2" hidden>
+                            <input type="text" id="search_word" name="string" hidden>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <hr class="devider_filter_category">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class=" margin-left-button">
+                        <div class="btn-group ">
+                            <button type="button" class="btn btn-filter dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                Sort by relevance<span class="pull-right margin-left-filter-button"><img
+                                            src="{{url('/images/shapes/up_down.png')}}"></span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item col-md-12" href="#">Price: low to high</a>
+                                <a class="dropdown-item col-md-12" href="#">Price: high to low</a>
+                                <a class="dropdown-item col-md-12" href="#">latest</a>
+                                <a class="dropdown-item col-md-12" href="#">Oldest</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <p class="pull-right margin-left-counter">{{Request::segment(3)}} items:5 of 56</p>
+                </div>
+            </div>
+
 
             <div class="col-md-6">
                 @foreach($items as $key=>$item)

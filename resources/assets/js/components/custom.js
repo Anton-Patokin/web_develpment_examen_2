@@ -29,5 +29,6 @@ $(function () {
         $(this).find('.accordion_click').slideToggle();
         $(this).find('.pull-right').toggleClass('caret-right-white').toggleClass('caret-white');
     })
+    
 
 });

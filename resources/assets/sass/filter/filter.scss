@@ -49,17 +49,47 @@
     text-align: left;
   }
 }
+
 .align-center {
   margin-top: 15px;
   font-size: 20px;
   text-align: center;
 }
 
+.price-box.category {
+  border: 1px solid $text-color_white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #fff;
+  margin-top: -30px;
+  .price_number {
+    text-align: center;
+    margin: 5px;
+    font-size: 20px;
+  }
+  .euro-teken {
+    text-align: left;
+  }
+}
+.line-category {
+  margin-top: -15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+
+
 .ui-slider-horizontal .ui-state-default {
   background: #535353;
   border-radius: 50%;
   margin-top: -3px;
 }
+
+#slider-range.ui-slider-horizontal.category .ui-state-default{
+  background: #fff;
+}
+
 .ui-slider-horizontal{
   height: 2px;
 }
