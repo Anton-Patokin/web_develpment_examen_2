@@ -39,11 +39,12 @@ class HomeController extends Controller
 //            return $item->fotos()->get()->first()->url;
                 $items_extra[$item->id]['foto'] = $item->fotos()->get()->first()->url;
                 $items_extra[$item->id]['translation'] = $item->translations()->where('locale', $this->language)->get()->first();
-                $items_extra[$item->id]['colors'] = $item->colors();
+                $items_extra[$item->id]['colors'] = $item->colors()->get();
                 $items_extra[$item->id]['collection'] = $item->collection;
                 $items_extra[$item->id]['category'] = $item->category()->first()->url;
             }
         };
+        
         return view('category/category')
             ->with('categories', $this->custom_selector->get_categories())
             ->with('items', $items)

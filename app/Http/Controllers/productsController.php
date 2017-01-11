@@ -275,7 +275,7 @@ class productsController extends Controller
             $request->url->move(base_path() . '/public/images/items/original/', $new_file_name);
             Image::make(public_path('/images/items/original/'.$new_file_name))->resize(230, 160)->save(public_path('/images/items/small/'.$new_file_name));
             Image::make(public_path('/images/items/original/'.$new_file_name))->resize(460, 260)->save(public_path('/images/items/big/'.$new_file_name));
-
+            Image::make(public_path('/images/items/original/'.$new_file_name))->fit(460, 220)->save(public_path('/images/items/trim/'.$new_file_name));
             $foto = new Item_foto;
             $foto->url = $new_file_name;
             Item::find($id)->fotos()->save($foto);
