@@ -30,7 +30,6 @@ class SearchController extends Controller
             ->with('items', $this->custom_selector->get_items(4))->with('items_search', '')->with('word', '');
 
     }
-
     public function search(Request $request)
     {
         $category_search = [];
@@ -40,15 +39,9 @@ class SearchController extends Controller
                 array_push($category_search, (int)$request->input($category->url));
             }
         }
-
-
         if ($request->string != '') {
             $word = $request->string;
-
             $array = $this->custom_selector->search_item($category_search, $request->string, $request->price_1, $request->price_2);
-
-
-
             $page = $request->page;
             $perPage = 5;
             $offset = ($page * $perPage) - $perPage;

@@ -56,3 +56,38 @@
 .margin-left-filter-button {
   margin-left: 25px;
 }
+
+
+.checkbox-margin-category {
+  margin-top: -10px;
+  margin-right: 20px;
+  display: inline-block;
+  float: left;
+}
+
+.checkbox-margin input[type="checkbox"] {
+  //display: none;
+}
+
+.checkbox-label-category {
+  display: block;
+  line-height: 30px;
+}
+
+.radio-custom-category:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 0;
+  background-color: #fff;
+  border: 1px solid $text-color_white;
+}
+
+.radio-custom-category:checked:before {
+  content: '\2714';
+  color: #000;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 20px;
+}

@@ -27,30 +27,49 @@ class HomeController extends Controller
             ->with('items', $this->custom_selector->get_items(4));
     }
 
-    public function show_category_product($category)
+    public function show_category_product(Request $request, $category)
     {
+        $category = Category::where('url', $category);
+        if ($category) {
+            $items = $category->first()->items();
+            if (isset($request->sort)) {
+                if ($request->sort == 'desc' || $request->sort == 'asc') {
+                    $items = $items->orderBy('price', $request->sort)->get();
 
-        $items = Category::where('url', $category)->first()->items()->get();
-        
-        $items_extra = [];
+                }
+                if ($request->sort == 'latest') {
+                    $items = $items->orderBy('created_at', 'asc')->get();
+                }
+                if ($request->sort == 'oldest') {
+                    $items = $items->orderBy('created_at', 'desc')->get();
+                }
+            } else {
+                $items = $items->paginate(9);
 
-        foreach ($items as $key => $item) {
-            if ($item && $item->active) {
-//            return $item->fotos()->get()->first()->url;
-                $items_extra[$item->id]['foto'] = $item->fotos()->get()->first()->url;
-                $items_extra[$item->id]['translation'] = $item->translations()->where('locale', $this->language)->get()->first();
-                $items_extra[$item->id]['colors'] = $item->colors()->get();
-                $items_extra[$item->id]['collection'] = $item->collection;
-                $items_extra[$item->id]['category'] = $item->category()->first()->url;
             }
-        };
-        
-        return view('category/category')
-            ->with('categories', $this->custom_selector->get_categories())
-            ->with('items', $items)
-            ->with('extra', $items_extra);
 
 
+
+
+            $items_extra = [];
+
+            foreach ($items as $key => $item) {
+                if ($item && $item->active) {
+//            return $item->fotos()->get()->first()->url;
+                    $items_extra[$item->id]['foto'] = $item->fotos()->get()->first()->url;
+                    $items_extra[$item->id]['translation'] = $item->translations()->where('locale', $this->language)->get()->first();
+                    $items_extra[$item->id]['colors'] = $item->colors()->get();
+                    $items_extra[$item->id]['collection'] = $item->collection;
+                    $items_extra[$item->id]['category'] = $item->category()->first()->url;
+                }
+            };
+            
+            return view('category/category')
+                ->with('categories', $this->custom_selector->get_categories())
+                ->with('items', $items)
+                ->with('extra', $items_extra);
+        }
+        return redirect('/');
     }
 
     public function show_product($category, $id)

@@ -2,6 +2,8 @@ require('./bootstrap');
 
 // require('/faq_api');
 require('./components/custom.js');
+require('./components/categories.js');
+require('./components/filter.js');
 (function ($) {
     $(document).ready(function () {
         var getUrl = window.location;
@@ -42,8 +44,6 @@ require('./components/custom.js');
             console.log(search_content);
         })
 
-
-
         var search_content;
         $('.faq_search_box').click(function () {
             search_content = $(this).html();
@@ -54,7 +54,7 @@ require('./components/custom.js');
                     $("#search_input").blur();
                     e.preventDefault();
                     if($(this).html()!=""){
-                        window.location.replace(baseUrl + "/search/faq/" + $(this).html());
+                        window.location.replace("/search/faq/" + $(this).html());
                     }
 // $(this).html(search_content);
                 }
