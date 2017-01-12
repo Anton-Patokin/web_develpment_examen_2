@@ -88,6 +88,19 @@ class productsController extends Controller
         ]);
 
         $item = new Item;
+
+        $position = Item::where('position',$request->position)->get()->first();
+        if(isset($position)){
+            $position_to_save=$item->position;
+            if($item->position==$request->position){
+                $position_to_save =$position_to_save++;
+            }
+            $position->position = $position_to_save;
+            $position->save();
+        }else{
+
+        }
+
         $item->price = $request->price;
         $item->collection = $request->collection;
         $item->position = $request->position;
@@ -303,11 +316,18 @@ class productsController extends Controller
         ]);
 
         $item = Item::find($id_item);
+
+        $position = Item::where('position',$request->position)->get()->first();
+        if(isset($position)){
+            $position->position = $item->position;
+            $position->save();
+        }
         $item->price = $request->price;
         $item->collection = $request->collection;
         $item->position = $request->position;
         $item->category_id = Category::where('url', $request->category)->first()->id;
         $item->save();
+
 
 
         $translation_fr = Item_translation::find($request->id_fr);

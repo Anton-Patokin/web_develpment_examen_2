@@ -22,6 +22,7 @@ class HomeController extends Controller
 
     public function index()
     {
+
         return view('home')
             ->with('categories', $this->custom_selector->get_categories())
             ->with('items', $this->custom_selector->get_items(4));
@@ -45,12 +46,7 @@ class HomeController extends Controller
                 }
             } else {
                 $items = $items->paginate(9);
-
             }
-
-
-
-
             $items_extra = [];
 
             foreach ($items as $key => $item) {
