@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Choplin-Medium-DEMO';
+    src: url('font/Choplin-Medium-DEMO.ttf.woff') format('woff'),
+    url('font/Choplin-Medium-DEMO.ttf.svg#Choplin-Medium-DEMO') format('svg'),
+    url('font/Choplin-Medium-DEMO.ttf.eot'),
+    url('font/Choplin-Medium-DEMO.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}

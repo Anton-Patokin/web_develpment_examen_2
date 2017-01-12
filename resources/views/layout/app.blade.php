@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="{{url('/css/font.css')}}" rel="stylesheet" async>
     <link href="{{url('/css/app.css')}}" rel="stylesheet" async>
     <meta charset="UTF-8">
     <meta name="author" content="Kowloon">
@@ -35,51 +36,21 @@
 @else
 
 @endif
-
-
-{{--<div id="wrapper" class="toggled">--}}
-{{--<!-- Sidebar -->--}}
-{{--@include('layout.navbar')--}}
-{{--<div id="page-content-wrapper">--}}
-{{--</div>--}}
-{{--</div>--}}
-
-{{--@yield('content')--}}
-
-
 @if( !Request::is('login'))
-    {{--//add hidden class!--}}
-
-
-
-
-
-
     <div id="wrapper" class="toggled">
         <!-- Sidebar -->
         @include('layout.navbar')
         <div id="page-content-wrapper">
         </div>
     </div>
-
     @yield('admin')
     @yield('content')
     @endif
     @if( Request::is('login'))
     @yield('login')
     @endif
-
-            <!-- /#wrapper -->
-
-    {{--<div id="wrapper toggled">--}}
-    {{--@include('layout.navbar')--}}
-
-    {{--<div id="page-content-wrapper">--}}
-
-    {{--</div>--}}
-    {{--</div>--}}
-
     <script src="{{url('/js/app.js')}}" async></script>
+
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -88,7 +59,6 @@
 
         ga('create', 'UA-90218409-1', 'auto');
         ga('send', 'pageview');
-
     </script>
 </body>
 </html>
