@@ -48,9 +48,9 @@ Route::get('/delete/{tabele}/product/{id}/{item_id}','productsController@delete_
 Route::post('/update/product/{id_item}','productsController@update_on_items');
 Route::post('/subscribe','subscribeController@add_subscriber');
 Route::get('/set_cookie','subscribeController@set_cookie');
-Route::get('/login', 'userController@index');
-Route::post('/users', 'userController@login');
-Route::get('/logout','userController@logout');
+Route::get('/login', 'UserController@index');
+Route::post('/users', 'UserController@login');
+Route::get('/logout','UserController@logout');
 Route::get('test', function () {
     return view('user.login');
 });
