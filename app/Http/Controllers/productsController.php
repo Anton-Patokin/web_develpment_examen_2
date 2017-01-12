@@ -42,7 +42,7 @@ class productsController extends Controller
     {
         //get pagination of products
 
-        $items = Item::orderBy('created_at', 'ASC')->paginate(12);
+        $items = Item::orderBy('created_at', 'desc')->paginate(6);
 
         $items_extra = [];
         foreach ($items as $key => $item) {
@@ -120,7 +120,7 @@ class productsController extends Controller
             $item->translations()->save($translation_nl);
 
         }
-
+        session(['success' => 'Added new product']);
         return redirect('/products');
     }
 
@@ -175,6 +175,7 @@ class productsController extends Controller
         $translation = $item->translations();
         $translation->delete();
         $item->delete();
+        session(['success' => 'Product deleted']);
         return redirect('/products');
     }
 
@@ -209,8 +210,6 @@ class productsController extends Controller
     {
 
         if($table == 'active'){
-
-
             if(count(Item::find($id)->fotos()->get())>0){
                 $item=Item::find($id);
                 if($item->active){
@@ -292,7 +291,7 @@ class productsController extends Controller
             $foto = new Item_foto;
             $foto->url = $new_file_name;
             Item::find($id)->fotos()->save($foto);
-            session(['success' => 'Foto']);
+            session(['success' => 'Foto added']);
         }
         return redirect('products/' . $id);
     }

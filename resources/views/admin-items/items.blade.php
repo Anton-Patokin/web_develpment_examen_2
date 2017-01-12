@@ -5,6 +5,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-12">
+                    @if(Session::get('success'))
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-success">
+                                    <strong>Success!</strong> {{Session::get('success')}} successful.
+                                </div>
+                                {{session()->forget('success')}}
+                            </div>
+                        </div>
+                    @endif
+                </div>
                 @foreach ($items as $key=>$item)
                     <div class=" col-md-4">
                         <div class="col-lg-12">

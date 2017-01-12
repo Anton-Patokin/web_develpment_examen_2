@@ -4,7 +4,18 @@
 @section('admin')
     <div class="container">
         <div class="row">
-
+            <div class="col-md-12">
+                @if(Session::get('success'))
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-success">
+                                <strong>Success!</strong> {{Session::get('success')}} successful.
+                            </div>
+                            {{session()->forget('success')}}
+                        </div>
+                    </div>
+                @endif
+            </div>
 
             <div class="col-md-offset-1">
                 <h1>images</h1>
