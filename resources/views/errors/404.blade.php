@@ -4,6 +4,8 @@
     <title>404-kowloon</title>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    <meta name="description" content="Kowloon 404 page">
+
     <link href="/css/app.css" rel="stylesheet">
 
 </head>

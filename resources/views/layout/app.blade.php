@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="{{url('/css/app.css')}}" rel="stylesheet">
+    <link href="{{url('/css/app.css')}}" rel="stylesheet" async>
+    <meta charset="UTF-8">
+    <meta name="author" content="Kowloon">
     @yield('header')
 
 </head>
@@ -77,7 +79,7 @@
     {{--</div>--}}
     {{--</div>--}}
 
-    <script src="{{url('/js/app.js')}}"></script>
+    <script src="{{url('/js/app.js')}}" async></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

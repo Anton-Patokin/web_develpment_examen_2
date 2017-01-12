@@ -1,5 +1,9 @@
 @extends('layout.app')
+@section('header')
+    <meta name="description" content="Kowloon{{ $translation->title}} oly for {{$item->price}}">
 
+    <title>Search-products-Kowloon</title>
+@endsection
 
 @section('content')
     @include('logo-top')

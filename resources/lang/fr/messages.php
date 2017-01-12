@@ -14,4 +14,6 @@ return [
     'set_cookie'=>'ok, continuer le surf',
     'colors'=>'Les couleurs',
     'description'=>'La description',
+    'meta_description'=>'Kowloon Online Shop est un magasin spécialisé dans les 
+    fournitures pour animaux de compagnie pour soutenir votre maison et / ou des animaux de ferme ',
 ];

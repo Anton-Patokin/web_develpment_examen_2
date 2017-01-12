@@ -1,6 +1,8 @@
 @extends('white_background.white')
 
 @section('header')
+    <meta name="description" content="Kowloon answer all your questions aubout aur webshop">
+
     <title>FAQ-search-Kowloon</title>
 @endsection
 @section('white_content')
