@@ -31,7 +31,7 @@ class HomeController extends Controller
     {
         $category = Category::where('url', $category);
         if ($category) {
-            $items = $category->first()->items();
+            $items = $category->first()->items()->where('active','1');
             if (isset($request->sort)) {
                 if ($request->sort == 'desc' || $request->sort == 'asc') {
                     $items = $items->orderBy('price', $request->sort)->get();
