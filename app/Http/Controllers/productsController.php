@@ -89,12 +89,13 @@ class productsController extends Controller
 
         $item = new Item;
 
+
         $position = Item::where('position',$request->position)->get()->first();
+       
         if(isset($position)){
-            $position_to_save=$item->position;
-            if($item->position==$request->position){
-                $position_to_save =$position_to_save++;
-            }
+            
+            $position_to_save=Item::orderBy('position', 'desc')->first()->position;
+            $position_to_save =$position_to_save++;
             $position->position = $position_to_save;
             $position->save();
         }else{
@@ -135,6 +136,7 @@ class productsController extends Controller
 
         $collections = Collection::all();
         $item = Item::find($id)->with('translations', 'colors', 'fotos', 'tags', 'dimensions', 'shapes')->where('id', $id)->get()->first();
+ 
         return view('admin-items.show-item', ['item' => $item, 'collections' => $collections])
             ->with('categories', $this->categories);
 
@@ -264,7 +266,7 @@ class productsController extends Controller
             $color->type = $request->color;
 
             Item::find($id)->colors()->save($color);
-            session(['success' => 'COlor']);
+            session(['success' => 'Color']);
             return redirect('products/' . $id);
         }
 
@@ -281,7 +283,7 @@ class productsController extends Controller
         if ($table == 'foto') {
 
             $this->validate($request, [
-                'url' => 'required|mimes:jpeg,png'
+                'url' => 'required|mimes:jpeg,png|max:8000'
             ]);
             $new_file_name = time() . '.' . $request->url->guessClientExtension();
             $request->url->move(base_path() . '/public/images/items/original/', $new_file_name);

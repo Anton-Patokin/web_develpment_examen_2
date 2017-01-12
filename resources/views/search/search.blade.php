@@ -1,6 +1,8 @@
 @extends('white_background.white')
 
 @section('header')
+    <meta name="description" content="Search in your webshop for animals gadgets">
+
     <title>Search-products-Kowloon</title>
 @endsection
 @section('white_content')

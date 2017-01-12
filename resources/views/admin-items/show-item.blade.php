@@ -294,7 +294,7 @@
                             @foreach($item->dimensions as $dimension)
                                 <div class="col-xs-6 col-md-6">
                                     <p>{{$dimension->type.'-> h:'.$dimension->height.'-> w:'.$dimension->width}}</p>
-                                    <a href="{{url('/delete/dimensions/product/'.$shape->id.'/'.$item->id)}}"
+                                    <a href="{{url('/delete/dimensions/product/'.$dimension->id.'/'.$item->id)}}"
                                        class="btn btn-danger">x</a>
                                 </div>
                             @endforeach

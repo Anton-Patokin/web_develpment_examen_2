@@ -126,13 +126,13 @@
                             <div class="item-detail-img-area ">
                                 <div class="col-md-12 ">
                                     <img id="img-big " class="img-big img_category"
-                                         src="{{url('/images/items/trim/'.$extra[$items[5]->id]['foto'])}}">
+                                         src="{{url('/images/items/trim/'.$extra[$items[4]->id]['foto'])}}">
                                 </div>
                                 <div class="col-md-12">
-                                    <h3>{{$extra[$items[5]->id]['translation']->title}}</h3>
-                                    <p>{{$extra[$items[5]->id]['translation']->description}}</p>
+                                    <h3>{{$extra[$items[4]->id]['translation']->title}}</h3>
+                                    <p>{{$extra[$items[4]->id]['translation']->description}}</p>
                                 </div>
-                                <h4 class="col-md-3 uppercase choplin-font">&#8364 {{$items[5]->price}}</h4>
+                                <h4 class="col-md-3 uppercase choplin-font">&#8364 {{$items[4]->price}}</h4>
                                 <button class="btn btn-pink font-white col-md-5 col-md-offset-4 pull-right-button">Want
                                     to
                                     know

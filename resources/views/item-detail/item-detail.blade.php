@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('header')
-    <meta name="description" content="Kowloon{{ $translation->title}} oly for {{$item->price}}">
+    <meta name="description" content="Kowloon{{ $translation->titlep}} oly for {{$item->price}}">
 
     <title>Search-products-Kowloon</title>
 @endsection

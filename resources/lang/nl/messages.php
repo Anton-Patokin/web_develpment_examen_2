@@ -14,5 +14,6 @@ return [
     'set_cookie'=>'ok, verder surfen',
     'colors'=>'Kleuren',
     'description'=>'Beschrijving',
+    'meta_description'=>'Kowloon Online Shop is een gespecialiseerde webshop in dierenbenodigheden ter ondersteuning van uw huis-en/ of landbouw dier'
 
 ];

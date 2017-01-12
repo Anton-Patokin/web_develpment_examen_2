@@ -30,7 +30,9 @@ class HomeController extends Controller
 
     public function show_category_product(Request $request, $category)
     {
+       
         $category = Category::where('url', $category);
+        
         if ($category) {
             $items = $category->first()->items()->where('active','1');
             if (isset($request->sort)) {
