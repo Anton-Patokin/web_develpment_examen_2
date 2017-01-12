@@ -37,7 +37,7 @@ Route::group(
         Route::get('/search/items','SearchController@index');
         Route::get('/search/filter/items','SearchController@search')->where(['price_1' => '^[a-zA-Z0-9_.-]*$',
             'price_2' => '^[a-zA-Z0-9_.-]*$','string' => '^[a-zA-Z0-9_.-]*$','page' => '^[a-zA-Z0-9_.-]*$']);
-       
+
 
     });
 
@@ -55,7 +55,6 @@ Route::get('test', function () {
     return view('user.login');
 });
 Route::post('/about_us' , 'AboutUsController@send_mail');
-<<<<<<< HEAD
 Route::get('/faq','FaqController@index');
 Route::post('/add/faq','FaqController@add_faq');
 Route::get('/get/faq/{room}/{id}','FaqController@get_faq');
@@ -67,13 +66,3 @@ Route::get('/delete/faq/{room}/{id}','FaqController@delete_faq');
 
 
 //Route::get('/search/faq/{string}','ApiController@search_faq');
-||||||| merged common ancestors
-Route::get('//faq','FaqController@index');
-Route::post('/add/faq','FaqController@add_faq');
-=======
-Route::get('/faq','FaqController@index');
-Route::post('/add/faq','FaqController@add_faq');
-Route::get('/get/faq/{room}/{id}','FaqController@get_faq');
-Route::post('/edit/faq/{room}/{id}','FaqController@edit_faq');
-Route::get('/delete/faq/{room}/{id}','FaqController@delete_faq');
->>>>>>> 8048114a3f2800fb884d94eee303ed7775a583dc
