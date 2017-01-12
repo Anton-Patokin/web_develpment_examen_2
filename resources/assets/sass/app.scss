@@ -115,7 +115,15 @@ input.form-control:-ms-input-placeholder {
 //  font-weight: normal;
 //  font-style: normal;
 //}
-
+@font-face {
+  font-family: 'Choplin-Medium-DEMO';
+  src: url('Choplin-Medium-DEMO.ttf.woff') format('woff'),
+  url('Choplin-Medium-DEMO.ttf.svg#Choplin-Medium-DEMO') format('svg'),
+  url('Choplin-Medium-DEMO.ttf.eot'),
+  url('Choplin-Medium-DEMO.ttf.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .choplin-font {
   font-family: 'Choplin-Medium-DEMO', "Arial";

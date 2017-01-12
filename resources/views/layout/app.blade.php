@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="{{url('/css/font.css')}}" rel="stylesheet" async>
     <link href="{{url('/css/app.css')}}" rel="stylesheet" async>
     <meta charset="UTF-8">
     <meta name="author" content="Kowloon">
