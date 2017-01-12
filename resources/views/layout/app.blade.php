@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="{{url('/css/app.css')}}" rel="stylesheet" async>
+<link href="{{url('/css/app.css')}}" rel="stylesheet" >
     <meta charset="UTF-8">
     <meta name="author" content="Kowloon">
     @yield('header')
@@ -48,7 +48,17 @@
     @if( Request::is('login'))
     @yield('login')
     @endif
-    <script src="{{url('/js/app.js')}}" async></script>
+   <!-- <script>var cb = function() {
+        var l = document.createElement('link'); l.rel = 'stylesheet';
+        l.href = '{{url('/css/css-mini.css')}}';
+        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+        webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(cb);
+        else window.addEventListener('load', cb);</script>
+    
+    <script src="{{url('/js/app.js')}}" async></script>-->
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
