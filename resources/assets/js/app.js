@@ -7,7 +7,7 @@ require('./components/filter.js');
 (function ($) {
     $(document).ready(function () {
         var getUrl = window.location;
-        var baseUrl = '/';
+        var baseUrl = window.location.origin;
 
 
 
