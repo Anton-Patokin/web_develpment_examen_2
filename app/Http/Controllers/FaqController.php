@@ -23,6 +23,7 @@ class FaqController extends Controller
 
 
     public  function show_users_faq($string){
+        
         $faqs="";
         if($string == 'all' || $string == ''){
             $string == 'all';
