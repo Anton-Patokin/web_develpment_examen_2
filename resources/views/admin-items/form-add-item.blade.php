@@ -67,7 +67,7 @@
             <select id="position" name="position" class="form-control">
 
                 @for($i=1;$i<count($items)+10;$i++)
-                    <option value="{{ $i}}">{{ $i}}</option>
+                    <option value="{{ $i}}" {{$i==count($items)?'selected':''}}>{{ $i}}</option>
                 @endfor
             </select>
 
